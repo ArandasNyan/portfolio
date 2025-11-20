@@ -3,8 +3,8 @@ import { createChart } from "./chart/chartSetup.js";
 import { github } from "./config/config.js";
 const { username } = github;
 
-const canvas = document.getElementById('chart-projects');
-const tooltip = document.getElementById('chart-tooltip');
+const canvas = document.querySelector('#chart-projects');
+const tooltip = document.querySelector('#chart-tooltip');
 
 async function execute() {
   const data = await fetchGitHubLanguages(username);

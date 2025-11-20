@@ -1,35 +1,46 @@
 @keyframes floatCard {
-  0% {
+  0%,100% {
     top: 0%;
     left: 69%;
   }
-  12.5% {
+  12.5%,62.5% {
     left: 63%;
   }
-  37.5% {
+  37.5%,87.5% {
     left: 75%;
   }
   50% {
     top: 47%;
     left: 69%;
   }
-  62.5% {
-    left: 63%;
+}
+
+@keyframes floatCard-inverse {
+  0%,100% {
+    top: 49%;
+    left: 10%;
   }
-  87.5% {
-    left: 75%;
+  15%,65% {
+    left: 5%;
   }
-  100% {
+  35%,85% {
+    left: 15%;
+  }
+  50% {
     top: 0%;
-    left: 69%;
+    left: 10%;
   }
+}
+
+.animate-floatCard-inverse {
+  animation: floatCard-inverse 12s ease-in-out infinite;
 }
 
 .animate-floatCard {
   animation: floatCard 12s ease-in-out infinite;
 }
 
-.animate-floatCard:hover {
+.animate-floatCard:hover, .animate-floatCard-inverse:hover {
   transition-delay: 750ms;
   animation-play-state: paused;
 }
