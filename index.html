@@ -5,234 +5,1177 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="noise-background">
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#about">Sobre mim</a></li>
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#experiences">Experiências</a></li>
-        <li><a href="#blog?">Blog?</a></li>
+<body class="bg-neutral-900 text-neutral-100 antialiased min-h-screen">
+  <header class="h-25 flex flex-col justify-center items-center px-32">
+    <svg class="h-6" viewBox="0 0 395 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <mask id="cat-mask-gradient" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="395"
+        height="200">
+        <path
+          d="M89.3634 1.05005C38.9579 7.20716 2.15612 46.1545 0.151353 95.4114C-0.707832 114.885 2.01292 127.915 10.3184 144.811C18.1942 160.562 29.0772 173.02 43.397 182.613C62.0126 194.927 80.0555 199.939 106.69 199.939C120.724 199.939 124.447 199.509 129.745 196.932C144.351 189.773 148.647 170.729 138.48 157.698C132.895 150.825 127.883 149.25 107.12 148.391C90.3657 147.675 86.6426 147.102 79.7691 143.809C68.8861 138.798 60.7239 131.209 55.9984 121.472C52.4184 114.312 51.9888 111.735 51.9888 99.707C51.9888 84.3858 54.4232 77.2264 62.5854 67.7759C77.1916 51.1661 106.404 50.1637 122.585 65.7713C132.036 74.7922 134.614 82.6676 139.196 115.458C142.776 141.089 150.222 155.837 168.552 173.163C180.867 184.618 199.912 194.498 216.236 197.791C229.267 200.369 294.852 200.798 303.587 198.507C310.174 196.646 318.336 187.625 320.484 180.036C323.205 169.583 318.622 158.128 309.171 152.4C304.732 149.537 301.439 148.964 285.401 148.391C263.635 147.389 254.756 144.239 244.589 134.072C235.282 124.765 231.845 115.601 230.27 96.5569C228.694 77.3696 226.26 68.4919 218.527 53.7435C205.783 28.9718 182.728 10.9301 154.661 3.62744C141.487 0.190918 106.977 -1.09778 89.3634 1.05005Z"
+          fill="black" />
+        <path
+          d="M245.019 31.4061C245.449 44.1498 246.881 66.4873 248.026 81.0925C250.747 112.021 252.609 117.749 262.632 124.049C278.814 134.215 300.437 129.633 325.639 110.733C336.379 102.857 337.381 101.712 334.804 100.566C327.93 97.416 335.663 90.8293 345.4 91.4021C352.274 91.9748 355.281 95.5546 351.844 98.9911C349.696 101.139 350.556 102.284 360.579 112.737C367.739 120.04 372.751 124.049 374.756 124.049C384.923 124.049 396.092 97.8456 394.517 77.5128C393.658 66.4873 389.792 55.8913 377.62 31.9788C367.596 11.9324 367.167 11.3596 363.157 14.0802C361.295 15.3689 356.427 19.3782 352.131 23.2443L344.398 30.2605L324.35 29.6878C304.446 29.2582 304.303 29.2582 292.704 23.6739C280.818 17.8031 269.363 13.937 253.325 10.3573L244.16 8.20949L245.019 31.4061Z"
+          fill="black" />
+      </mask>
+      <g mask="url(#cat-mask-gradient)">
+        <rect width="395.333" height="200" transform="matrix(1 0 0 -1 -0.666626 200)" fill="black" />
+        <rect x="-0.666626" width="395.333" height="200" fill="url(#cat-pattern-gradient)" />
+      </g>
+      <defs>
+        <pattern id="cat-pattern-gradient" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#cat-gradient" transform="matrix(0.00140449 0 0 0.00277622 0 -0.0552434)" />
+        </pattern>
+        <image id="cat-gradient" width="712" height="400" preserveAspectRatio="none"
+          xlink:href="/public/images/logo/cat-logo-background-gradient.png" />
+      </defs>
+    </svg>
+    <nav class="border-2 border-neutral-800 bg-neutral-800/35 rounded-2xl h-14 w-full max-w-lg">
+      <ul class="w-full h-full flex flex-row justify-evenly items-center">
+        <li class="text-orange-200"><a href="#">Home</a></li>
+        <li><a href="about-me">Sobre mim</a></li>
+        <li><a href="projects">Projetos</a></li>
+        <li><a href="contact">Contato</a></li>
+        <li><a href="blog">Blog</a></li>
       </ul>
     </nav>
   </header>
-  <main>
+
+  <main class="w-full min-h-[calc(100vh-100px)] px-8 overflow-hidden">
     <!-- hero section -->
-    <section>
-      <h1>
-        <span>Eu sou</span><br>
-        <span class="text-shine">Desenvolvedor Back-end</span>
+    <section class="w-full min-h-[calc(100vh-100px)] flex flex-col justify-center items-center gap-8 relative">
+      <div
+        class="bg-gradient-to-r from-rose-200/10 to-orange-200/10 w-max px-4 py-1 rounded-full mb-2 flex items-center justify-center">
+        <p class="text-lg text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text font-medium">
+          Emmanoel Vieira
+        </p>
+      </div>
+      <h1
+        class="text-7xl font-bold bg-gradient-to-r from-rose-200 via-orange-200 to-rose-200 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+        Desenvolvedor Backend
       </h1>
-      <p>Olá! Me chamo Emmanoel Vieira, sou <span>Desenvolvedor Back-end</span> motivado pela busca
-        constante de novos desafios e aprendizados por meio da tecnologia.</p>
-      <button>Entrar em contato</button>
+      <p class="w-2xl text-center text-lg mb-8">Gosto de transofrmar ideias em sistemas inteiros, desde a lógica e
+        automação ao processamento de dados e integrações de sistemas.</p>
+      <button
+        class="flex justify-center items-center w-max h-12 bg-gradient-to-r from-rose-200 to-orange-200 py-2 px-4 gap-3 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+        Download CV
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+          stroke-linejoin="round" class="size-6 stroke-2">
+          <path d="M12 17V3" />
+          <path d="m6 11 6 6 6-6" />
+          <path d="M19 21H5" />
+        </svg>
+      </button>
+
+      <!-- absolute cards introduction -->
+      <div
+        class="animate-floatCard w-90 absolute bg-neutral-800/25 border-2 border-neutral-800 backdrop-blur-sm p-8 rounded-3xl top-[35%] left-[69%] flex flex-col items-center justify-center">
+        <h3 class="mb-4 text-neutral-200 text-center font-semibold">Linguanges utilizadas em projetos</h3>
+        <!-- chart design -->
+        <div class="relative">
+          <canvas id="chart-projects" class="w-50"></canvas>
+
+          <div id="chart-tooltip"
+            class=" bg-neutral-800/40 w-max hidden px-3 py-2 rounded-xl text-sm font-medium text-white backdrop-blur-[15px] flex flex-col justify-center items-center absolute pointer-events-none transition-[left,top,opacity] duration-200 ease-in-out shadow-xl/20 shadow-neutral-950">
+          </div>
+        </div>
+        <p class="mt-4 text-neutral-400 text-center">Interaja para ver as linguagens usadas nos meus projetos</p>
+      </div>
+    </section>
+
+    <!-- about-me section -->
+    <section class="w-full min-h-screen flex flex-col justify-center items-center">
+      <div class="flex gap-10 mb-32">
+        <!-- left side -->
+        <div class="flex flex-col">
+          <div
+            class="bg-gradient-to-r from-rose-200/10 to-orange-200/10 w-max px-4 py-1 rounded-full mb-2 flex items-center justify-center">
+            <p class="text-sm text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text font-medium">
+              Sobre mim
+            </p>
+          </div>
+
+          <h2 class="text-5xl mb-6">
+            Minha jornada como<br>
+            <span
+              class="font-semibold text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text text-6xl w-max">
+              Desenvolvedor
+            </span>
+          </h2>
+
+          <ul class="flex flex-col gap-6">
+
+            <!-- Quem sou como dev -->
+            <li class="flex flex-col gap-2">
+              <h4 class="flex gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-circle-check-big">
+                  <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+                  <path d="m9 11 3 3L22 4" />
+                </svg>
+                Início da Carreira
+              </h4>
+              <p class="w-xl">
+                Minha jornada na tecnologia começou ao acompanhar o trabalho de um amigo desenvolvedor. A curiosidade
+                virou
+                estudo, e o estudo virou prática — foi assim que descobri que criar soluções e entender como sistemas
+                funcionam
+                era o caminho que eu queria seguir profissionalmente.
+              </p>
+            </li>
+
+            <!-- Motivação e valor que entrega -->
+            <li class="flex flex-col gap-2">
+              <h4 class="flex gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-circle-check-big">
+                  <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+                  <path d="m9 11 3 3L22 4" />
+                </svg>
+                Motivação e Propósito
+              </h4>
+              <p class="w-xl">
+                Acredito no impacto real que a tecnologia pode gerar. Por isso, busco desenvolver soluções práticas que
+                resolvem
+                problemas, automatizam tarefas e tornam processos mais eficientes — sempre com foco na experiência de
+                quem vai
+                utilizar.
+              </p>
+            </li>
+
+            <!-- Objetivo de carreira baseado em habilidade e direção -->
+            <li class="flex flex-col gap-2">
+              <h4 class="flex gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-circle-check-big">
+                  <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+                  <path d="m9 11 3 3L22 4" />
+                </svg>
+                Objetivo de Carreira
+              </h4>
+              <p class="w-xl">
+                Meu objetivo é evoluir constantemente como desenvolvedor, participando de projetos desafiadores e, no
+                futuro,
+                liderar equipes que criem sistemas de alto impacto — unindo qualidade técnica, colaboração e visão
+                estratégica.
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
+
+        <!-- right side -->
+        <div class="relative">
+          <img src="./public/Images/photos/project-1.png" alt="foto de um projeto em código"
+            class="h-[320px] w-[532px] rounded-2xl border-2 border-neutral-700/65">
+          <img src="./public/Images/photos/project-2.png" alt="foto de um projeto em código"
+            class="h-[320px] w-[532px] rounded-2xl border-2 border-neutral-700/65 absolute top-25 left-25">
+        </div>
+      </div>
+
+      <!-- button learn more details -->
+      <button
+        class="flex justify-center items-center w-max h-12 bg-gradient-to-r from-rose-200 to-orange-200 py-2 px-4 gap-3 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+        Ver mais
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+          stroke-linejoin="round" class="size-6 stroke-2">
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </button>
     </section>
 
     <!-- projects section -->
-    <section>
-      <h1>Projetos</h1>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="/public/image/png/ducky.png" alt="imagem do projeto ducky">
-          <div class="container-content">
-            <p>Software Engineer & Designer</p>
-            <h2>The Cute Ducky Hacker</h2>
-          </div>
-          <div class="divider"></div>
-          <div>
-            <!-- git icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48">
-              <path fill="#F4511E"
-                d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z">
-              </path>
-            </svg>
-            <!-- more icones here -->
-          </div>
+    <section class="w-full min-h-screen flex items-center justify-center">
+      <div class="flex justify-between w-full max-w-5xl mb-32">
+        <!-- left side -->
+        <div class="relative w-xs h-100">
+          <!-- projects cards here -->
+          <div class="w-2xs h-80 bg-neutral-800 rounded-3xl absolute top-0 left-0"></div>
+          <div class="w-2xs h-80 bg-neutral-600 rounded-3xl absolute top-10 left-10"></div>
+          <div class="w-2xs h-80 bg-neutral-400 rounded-3xl absolute top-20 left-20"></div>
         </div>
 
-        <div class="project-card">
-          <img src="/public/image/png/ducky.png" alt="imagem do projeto ducky">
-          <div class="container-content">
-            <p>Software Engineer & Designer</p>
-            <h2>The Cute Ducky Hacker</h2>
+        <!-- right side -->
+        <div>
+          <div
+            class="bg-gradient-to-r from-rose-200/10 to-orange-200/10 w-max px-4 py-1 rounded-full mb-2 flex items-center justify-center">
+            <p class="text-sm text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text font-medium">
+              Projetos</p>
           </div>
-          <div class="divider"></div>
-          <div>
-            <!-- git icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48">
-              <path fill="#F4511E"
-                d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z">
-              </path>
-            </svg>
-            <!-- more icones here -->
-          </div>
-        </div>
+          <h2 class="text-5xl mb-6">Destaque de <span
+              class="font-semibold text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text text-5xl w-max">Projetos</span>
+          </h2>
+          <p class="w-xl mb-4">
+            Desenvolvi aplicações que aprimoram a eficiência de processos e a forma como as empresas operam, adquirindo
+            não apenas experiência técnica, mas também competências essenciais como planejamento e resolução de
+            problemas.
+          </p>
 
-        <div class="project-card">
-          <img src="/public/image/png/ducky.png" alt="imagem do projeto ducky">
-          <div class="container-content">
-            <p>Software Engineer & Designer</p>
-            <h2>The Cute Ducky Hacker</h2>
-          </div>
-          <div class="divider"></div>
-          <div>
-            <!-- git icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48">
-              <path fill="#F4511E"
-                d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z">
-              </path>
+          <p class="w-xl mb-12">
+            Cada projeto foi criado com o propósito de melhorar ou automatizar etapas importantes. Alguns foram
+            utilizados diretamente por pessoas em ambientes reais, enquanto outros tiveram caráter acadêmico.
+          </p>
+          <button
+            class="flex justify-center items-center w-max h-12 bg-gradient-to-r from-rose-200 to-orange-200 py-2 px-4 gap-3 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+            Ver mais projetos
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" class="size-6 stroke-2">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
             </svg>
-            <!-- more icones here -->
-          </div>
+          </button>
         </div>
       </div>
-
-      <button>Ver projetos</button>
     </section>
 
-    <!-- about me section -->
-    <section>
-      <h1>Sobre Mim</h1>
-      <article>
-        <img src="/public/image/profile/CatLaugh.webp" alt="Gatinho sorrindo" />
-        <div class="about-text-container">
-          <p>
-            Apaixonado por como a tecnologia pode transformar pequenas ideias em grandes soluções.
-          </p>
-          <p>
-            Comecei a programar há mais de 5 anos, criando desde pequenas automações até grandes APIs e chatbots.
-            Ao longo dessa jornada, também liderei squads em projetos acadêmicos, fortalecendo minha visão de
-            colaboração, aprendizado e profissionalismo.
-          </p>
-          <p>
-            Hoje atuo com desenvolvimento de software, aplicando arquitetura limpa, automação de processos e
-            integração de sistemas para impulsionar empresas com soluções eficientes e bem estruturadas.
-          </p>
-          <p>
-            Meu objetivo é <span class="bold-800">continuar evoluindo como desenvolvedor</span> e usar a tecnologia para
-            <span class="bold-800">mudar vidas e impactar empresas</span>, apoiando e colaborando na evolução delas.
-          </p>
+    <!-- values & work style section -->
+    <section class="w-full min-h-screen flex items-center justify-center">
+      <!-- container -->
+      <div
+        class="max-w-6xl bg-neutral-800/45 border-2 rounded-3xl border-neutral-700/40 p-6 flex flex-col gap-8 relative overflow-hidden">
+        <!-- top div -->
+        <div class="w-full flex gap-6 z-2">
+          <div class="w-1/2 flex flex-col justify-between">
+            <div
+              class="bg-gradient-to-r from-rose-200/10 to-orange-200/10 w-max px-4 py-1 rounded-full mb-2 flex items-center justify-center">
+              <p class="text-sm text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text font-medium">
+                Valores & Trabalho</p>
+            </div>
+            <h2 class="text-5xl mb-6">Valores & <br><span
+                class="font-semibold text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text text-5xl w-max">Estilo
+                de Trabalho</span>
+            </h2>
+          </div>
+
+          <div class="w-1/2 flex flex-col justify-between">
+            <p>
+              Acredito que bons resultados nascem de uma boa forma de trabalhar. Por isso, sigo princípios que
+              fortalecem
+              meu modo de desenvolver e colaborar, buscando sempre crescer junto com a equipe e a empresa.
+            </p>
+            <button
+              class="flex justify-center items-center w-max h-12 bg-gradient-to-r from-rose-200 to-orange-200 py-2 px-4 gap-3 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+              Entrar em contato
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+                stroke-linejoin="round" class="size-6 stroke-2">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </button>
+          </div>
         </div>
-      </article>
-      <button>Ver Mais</button>
+
+        <!-- divider -->
+        <!-- <div class="h-[1px] w-full bg-neutral-700 rounded-full"></div> -->
+
+        <!-- bottom div -->
+        <div class="w-full flex gap-6 z-2">
+          <!-- list of values -->
+          <div class="w-1/2">
+            <ul class="w-full h-full flex flex-col justify-between">
+              <li class="flex flex-col gap-2">
+                <h3 class="text-2xl text-neutral-200">Planejamento e precisão</h3>
+                <p class="text-neutral-400">
+                  Acredito que cada decisão técnica deve ser guiada pela clareza dos requisitos e pelo impacto real no
+                  projeto. Busco sempre contribuir para o avanço da empresa de forma positiva, sustentável e
+                  estratégica.
+                </p>
+              </li>
+              <div class="h-[1px] w-full bg-neutral-700 rounded-full"></div>
+              <li class="flex flex-col gap-2">
+                <h3 class="text-2xl text-neutral-200">Qualidade e Consistência</h3>
+                <p class="text-neutral-400">
+                  Valorizo boas práticas, organização, testes e manutenção de longo prazo, pilares essenciais para
+                  garantir soluções estáveis e escaláveis em equipes de alto desempenho.
+                </p>
+              </li>
+              <div class="h-[1px] w-full bg-neutral-700 rounded-full"></div>
+              <li class="flex flex-col gap-2">
+                <h3 class="text-2xl text-neutral-200">Trabalho em Equipe</h3>
+                <p class="text-neutral-400">
+                  Vejo cada alinhamento, feedback e troca de experiência como oportunidades de evolução. Acredito que a
+                  colaboração é o caminho para aprimorar resultados e conquistar novos desafios dentro da empresa.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- card value & work style -->
+          <div
+            class="w-1/2 h-full bg-neutral-800/45 border-2 rounded-3xl border-neutral-700/50 p-6 flex flex-col gap-6 backdrop-blur-xl">
+            <!-- container icon -->
+            <div class="w-full flex items-center justify-center">
+              <svg class="w-auto h-66" viewBox="0 0 487 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M237.107 337.417L345.457 383.141L346.416 383.988L347.548 384L452.284 314.055L347.481 274.56L237.107 337.417Z"
+                  fill="#3F7489" />
+                <path d="M237.106 326.592L346.338 371.498L451.977 301.91L346.776 262.265L237.106 326.592Z"
+                  fill="#5598B9" />
+                <path d="M237.107 337.417V326.592L346.339 371.497V383.513L237.107 337.417Z" fill="#3F7489" />
+                <path d="M451.977 301.91V313.088L346.339 383.514V371.498L451.977 301.91Z" fill="#EBD8C3" />
+                <path
+                  d="M367.093 202.887L420.258 170.762C422.246 169.561 421.938 166.588 419.748 165.818L362.618 145.76C361.869 145.497 361.044 145.571 360.352 145.962L306.611 176.433C304.584 177.581 304.817 180.573 306.998 181.394L364.706 203.107C365.493 203.404 366.372 203.322 367.093 202.887Z"
+                  fill="#524296" />
+                <path
+                  d="M367.093 199.799L420.258 167.674C422.246 166.473 421.938 166.588 419.748 165.818L362.618 145.76C361.869 145.497 361.044 145.571 360.352 145.962L306.611 176.433C304.584 177.581 304.817 177.485 306.998 178.306L364.706 200.02C365.493 200.315 366.372 200.234 367.093 199.799Z"
+                  fill="#6048AA" />
+                <path
+                  d="M347.915 174.621C347.915 174.621 341.416 172.491 343.273 165.445C345.13 158.401 356.764 154.795 364.464 156.597C372.165 158.399 388.549 164.789 388.221 174.62C387.894 184.451 373.803 185.598 367.413 182.812C361.023 180.028 355.452 177.243 347.915 174.621Z"
+                  fill="#D2D2F7" />
+                <path
+                  d="M347.915 174.622C347.915 174.622 354.209 170.48 359.504 172.898C364.798 175.316 367.301 181.927 370.31 183.701C370.31 183.701 349.212 175.238 347.915 174.622Z"
+                  fill="white" />
+                <path
+                  d="M352.458 159.782C352.458 159.782 352.02 159.566 351.2 159.782C350.381 159.997 349.971 160.625 351.091 161.062C352.21 161.499 356.349 162.182 359.113 163.082C361.877 163.983 362.834 163.11 362.424 162.427C362.014 161.745 360.308 161.167 360.308 161.167L352.458 159.782Z"
+                  fill="white" />
+                <path
+                  d="M351.632 160.199C351.632 160.199 355.602 157.316 359.491 160.332C359.491 160.332 360.625 161.444 360.938 162.269C360.938 162.269 357.281 162.097 351.632 160.199Z"
+                  fill="#B4A0F5" />
+                <path
+                  d="M368.076 70.4543C355.467 70.4543 345.246 74.0241 345.246 78.4284V126.381C345.246 130.785 355.467 134.355 368.076 134.355C380.684 134.355 390.905 130.785 390.905 126.381V78.4284C390.905 74.0241 380.684 70.4543 368.076 70.4543Z"
+                  fill="white" />
+                <path
+                  d="M368.69 85.7868C356.082 85.7868 345.861 82.217 345.861 77.8128C345.861 77.0206 346.202 76.2583 346.817 75.5359C345.816 76.4327 345.245 77.4055 345.245 78.4268C345.245 82.8311 355.466 86.4008 368.075 86.4008C378.417 86.4008 387.141 83.9969 389.948 80.7037C386.632 83.6768 378.376 85.7868 368.69 85.7868Z"
+                  fill="#D2D2F7" />
+                <path
+                  d="M390.906 91.044C390.906 91.044 398.06 86.6198 401.665 93.5015C405.269 100.383 390.906 118.571 390.906 118.571V124.47C390.906 124.47 407.399 107.757 406.416 92.8463C405.434 84.2496 395.111 84.6544 393.636 85.1451C392.161 85.6371 390.904 86.4006 390.904 86.4006L390.906 91.044Z"
+                  fill="white" />
+                <path
+                  d="M368.076 73.8186C349.741 73.9606 347.72 79.2069 347.72 79.2069C351.434 85.31 368.076 84.5951 368.076 84.5951C368.076 84.5951 384.718 85.31 388.432 79.2069C388.432 79.2069 386.412 73.9606 368.076 73.8186Z"
+                  fill="#564D66" />
+                <path
+                  d="M346.955 86.4021L347.72 125.288C347.72 125.288 347.938 132.317 375.137 132.408C375.137 132.408 350.232 128.456 346.955 86.4021Z"
+                  fill="#D2D2F7" />
+                <path
+                  d="M42.3003 269.875L42.1545 262.547L177.75 328.768V335.775C177.75 336.18 177.326 336.446 176.963 336.269L43.4399 271.651C42.7561 271.321 42.3152 270.634 42.3003 269.875Z"
+                  fill="#B4A0F5" />
+                <path
+                  d="M360.238 216.898L360.337 222.621C360.337 223.966 358.909 225.036 357.947 225.628L178.816 335.996C178.35 336.282 177.75 335.947 177.75 335.4V328.769L360.238 216.898Z"
+                  fill="#C3B8F2" />
+                <path d="M39.4468 101.009L222.724 3.30713V161.548L39.4468 263.369V101.009Z" fill="#C7C7FB" />
+                <path
+                  d="M49.009 102.324L216.961 12.6072C218.144 11.9757 219.574 12.8327 219.574 14.1741V155.497C219.574 157.267 218.608 158.896 217.056 159.744L50.556 250.759C48.664 251.792 46.3547 250.424 46.3547 248.268V106.752C46.3547 104.899 47.3748 103.197 49.009 102.324Z"
+                  fill="#36274B" />
+                <path
+                  d="M43.4614 265.315L173.371 328.286C176.1 329.609 179.313 329.451 181.898 327.865L359.426 219.034C361.059 218.034 360.842 215.596 359.058 214.899L223.74 161.946C223.096 161.694 222.373 161.743 221.769 162.078L43.3456 261.202C41.7065 262.114 41.7725 264.497 43.4614 265.315Z"
+                  fill="#D2D2F7" />
+                <path
+                  d="M71.8845 260.948L136.213 289.465C138.326 290.401 140.76 290.263 142.752 289.095L289.992 202.774C292.337 201.397 292.319 198.37 289.254 197.533L223.587 170.079C222.419 169.719 221.441 169.746 220.334 170.328L71.5433 254.128C69.2664 255.444 69.4881 259.867 71.8845 260.948Z"
+                  fill="#493A60" />
+                <path
+                  d="M200.077 269.221L228.65 283.638C229.505 284.069 230.52 284.03 231.338 283.535L291.92 246.857C293.887 245.666 293.636 242.737 291.494 241.899L261.478 230.153C260.693 229.847 259.813 229.911 259.083 230.331L199.944 264.337C198.029 265.438 198.106 268.226 200.077 269.221Z"
+                  fill="#B5B5E5" />
+                <path
+                  d="M222.724 3.30715L218.924 0.433665C218.139 -0.0471165 217.177 -0.166695 216.368 0.271738L35.8548 97.4096C35.3167 97.7011 35.2968 98.4658 35.8187 98.7847L39.9551 101.318L222.724 3.30715Z"
+                  fill="#B4A0F5" />
+                <path
+                  d="M77.2221 258.225L82.8532 254.85C83.0824 254.713 83.0388 254.368 82.7822 254.293L78.586 253.06C78.5063 253.036 78.4216 253.046 78.3493 253.087L73.0209 256.091C72.7979 256.217 72.8178 256.544 73.0545 256.642L76.9493 258.246C77.0378 258.282 77.1399 258.275 77.2221 258.225Z"
+                  fill="#524296" />
+                <path
+                  d="M77.3054 257.789L82.8046 254.561C82.9129 254.498 82.893 254.337 82.7734 254.301L78.6394 253.075C78.5186 253.013 78.3978 253.044 78.3031 253.113L73.0756 256.06C72.9697 256.119 72.9809 256.274 73.093 256.32L76.8458 257.823C76.9953 257.883 77.1659 257.871 77.3054 257.789Z"
+                  fill="#6048AA" />
+                <path
+                  d="M85.4377 253.747L91.0688 250.372C91.298 250.235 91.2544 249.89 90.9978 249.815L86.8016 248.582C86.7218 248.558 86.6371 248.568 86.5649 248.609L81.2364 251.613C81.0135 251.739 81.0334 252.065 81.2701 252.164L85.1649 253.768C85.2533 253.804 85.3555 253.797 85.4377 253.747Z"
+                  fill="#524296" />
+                <path
+                  d="M85.521 253.311L91.0201 250.084C91.1284 250.02 91.1085 249.86 90.9889 249.823L86.855 248.598C86.7341 248.536 86.6133 248.567 86.5187 248.635L81.2911 251.582C81.1852 251.642 81.1952 251.796 81.3085 251.842L85.0614 253.346C85.2108 253.406 85.3815 253.393 85.521 253.311Z"
+                  fill="#6048AA" />
+                <path
+                  d="M93.5698 249.446L99.2009 246.07C99.4301 245.933 99.3852 245.588 99.1299 245.514L94.9336 244.28C94.8539 244.257 94.7692 244.267 94.697 244.308L89.3685 247.312C89.1456 247.438 89.1655 247.764 89.4022 247.863L93.2957 249.467C93.3854 249.503 93.4875 249.496 93.5698 249.446Z"
+                  fill="#524296" />
+                <path
+                  d="M93.6531 249.009L99.1522 245.782C99.2605 245.718 99.2406 245.557 99.121 245.521L94.987 244.296C94.8662 244.233 94.7454 244.264 94.6507 244.333L89.4232 247.28C89.3173 247.34 89.3273 247.494 89.4406 247.54L93.1934 249.044C93.3429 249.105 93.5136 249.091 93.6531 249.009Z"
+                  fill="#6048AA" />
+                <path
+                  d="M101.268 245.013L106.899 241.638C107.129 241.501 107.085 241.156 106.828 241.081L102.632 239.848C102.552 239.824 102.468 239.834 102.395 239.875L97.067 242.879C96.8441 243.005 96.864 243.332 97.1006 243.43L100.995 245.034C101.084 245.07 101.186 245.063 101.268 245.013Z"
+                  fill="#524296" />
+                <path
+                  d="M101.352 244.577L106.851 241.349C106.959 241.286 106.939 241.125 106.82 241.089L102.686 239.863C102.565 239.801 102.444 239.832 102.35 239.901L97.122 242.848C97.0161 242.908 97.0273 243.062 97.1394 243.108L100.892 244.611C101.042 244.671 101.212 244.659 101.352 244.577Z"
+                  fill="#6048AA" />
+                <path
+                  d="M109.484 240.537L115.115 237.162C115.344 237.025 115.301 236.68 115.044 236.605L110.848 235.372C110.768 235.348 110.684 235.358 110.611 235.399L105.283 238.403C105.06 238.529 105.08 238.856 105.316 238.954L109.211 240.558C109.3 240.594 109.402 240.587 109.484 240.537Z"
+                  fill="#524296" />
+                <path
+                  d="M109.568 240.1L115.067 236.873C115.175 236.809 115.155 236.649 115.036 236.613L110.902 235.387C110.781 235.325 110.66 235.356 110.566 235.424L105.338 238.371C105.232 238.431 105.243 238.585 105.355 238.632L109.108 240.135C109.258 240.195 109.428 240.182 109.568 240.1Z"
+                  fill="#6048AA" />
+                <path
+                  d="M117.616 236.236L123.247 232.861C123.476 232.724 123.432 232.379 123.176 232.304L118.98 231.071C118.9 231.047 118.816 231.057 118.743 231.098L113.415 234.103C113.192 234.228 113.212 234.555 113.449 234.653L117.342 236.257C117.432 236.292 117.534 236.285 117.616 236.236Z"
+                  fill="#524296" />
+                <path
+                  d="M117.7 235.798L123.199 232.571C123.307 232.508 123.287 232.347 123.168 232.311L119.034 231.085C118.913 231.023 118.792 231.054 118.697 231.122L113.47 234.069C113.364 234.129 113.374 234.284 113.487 234.33L117.24 235.833C117.39 235.893 117.56 235.881 117.7 235.798Z"
+                  fill="#6048AA" />
+                <path
+                  d="M125.362 231.732L130.993 228.356C131.222 228.219 131.179 227.876 130.922 227.8L126.726 226.567C126.646 226.543 126.561 226.553 126.489 226.594L121.161 229.598C120.938 229.724 120.958 230.05 121.194 230.149L125.088 231.754C125.178 231.789 125.28 231.782 125.362 231.732Z"
+                  fill="#524296" />
+                <path
+                  d="M125.446 231.297L130.945 228.07C131.053 228.006 131.034 227.844 130.914 227.809L126.78 226.584C126.659 226.521 126.538 226.553 126.445 226.621L121.217 229.568C121.111 229.628 121.121 229.782 121.235 229.828L124.988 231.332C125.136 231.391 125.307 231.378 125.446 231.297Z"
+                  fill="#6048AA" />
+                <path
+                  d="M133.578 227.255L139.209 223.879C139.439 223.742 139.395 223.399 139.138 223.323L134.942 222.09C134.862 222.066 134.778 222.076 134.706 222.117L129.377 225.121C129.154 225.247 129.174 225.573 129.411 225.672L133.304 227.277C133.394 227.312 133.496 227.305 133.578 227.255Z"
+                  fill="#524296" />
+                <path
+                  d="M133.662 226.818L139.161 223.591C139.269 223.527 139.249 223.365 139.13 223.33L134.996 222.105C134.875 222.042 134.754 222.074 134.659 222.142L129.432 225.089C129.326 225.149 129.336 225.303 129.449 225.349L133.202 226.853C133.351 226.912 133.522 226.9 133.662 226.818Z"
+                  fill="#6048AA" />
+                <path
+                  d="M141.71 222.954L147.341 219.579C147.57 219.442 147.525 219.097 147.27 219.022L143.074 217.789C142.994 217.765 142.909 217.775 142.837 217.816L137.509 220.82C137.286 220.946 137.306 221.273 137.542 221.371L141.436 222.976C141.526 223.011 141.628 223.003 141.71 222.954Z"
+                  fill="#524296" />
+                <path
+                  d="M141.793 222.517L147.292 219.289C147.401 219.226 147.381 219.064 147.261 219.029L143.127 217.803C143.006 217.741 142.886 217.772 142.791 217.841L137.563 220.788C137.457 220.848 137.469 221.002 137.581 221.048L141.334 222.551C141.483 222.611 141.654 222.599 141.793 222.517Z"
+                  fill="#6048AA" />
+                <path
+                  d="M149.74 218.198L155.371 214.822C155.6 214.685 155.557 214.34 155.3 214.265L151.104 213.032C151.024 213.009 150.94 213.019 150.867 213.06L145.539 216.064C145.316 216.19 145.336 216.516 145.573 216.615L149.467 218.219C149.556 218.255 149.657 218.246 149.74 218.198Z"
+                  fill="#524296" />
+                <path
+                  d="M149.823 217.76L155.322 214.533C155.43 214.469 155.41 214.307 155.289 214.272L151.155 213.047C151.034 212.984 150.914 213.015 150.819 213.084L145.591 216.031C145.486 216.091 145.497 216.246 145.609 216.291L149.362 217.795C149.514 217.854 149.683 217.842 149.823 217.76Z"
+                  fill="#6048AA" />
+                <path
+                  d="M157.956 213.718L163.587 210.342C163.816 210.205 163.771 209.86 163.516 209.786L159.32 208.552C159.24 208.529 159.155 208.539 159.083 208.58L153.755 211.584C153.532 211.71 153.551 212.036 153.788 212.135L157.683 213.739C157.771 213.775 157.872 213.768 157.956 213.718Z"
+                  fill="#524296" />
+                <path
+                  d="M158.038 213.282L163.537 210.055C163.646 209.991 163.626 209.831 163.506 209.795L159.372 208.569C159.251 208.507 159.13 208.538 159.036 208.606L153.808 211.553C153.702 211.613 153.714 211.768 153.826 211.814L157.579 213.317C157.729 213.377 157.899 213.364 158.038 213.282Z"
+                  fill="#6048AA" />
+                <path
+                  d="M166.088 209.419L171.719 206.043C171.948 205.906 171.904 205.561 171.648 205.487L167.451 204.254C167.372 204.23 167.287 204.24 167.215 204.281L161.886 207.285C161.663 207.411 161.683 207.737 161.92 207.836L165.815 209.44C165.903 209.476 166.004 209.469 166.088 209.419Z"
+                  fill="#524296" />
+                <path
+                  d="M166.171 208.981L171.67 205.754C171.779 205.69 171.759 205.529 171.638 205.493L167.504 204.268C167.383 204.205 167.262 204.237 167.168 204.305L161.94 207.252C161.834 207.312 161.844 207.466 161.958 207.512L165.711 209.016C165.861 209.076 166.031 209.063 166.171 208.981Z"
+                  fill="#6048AA" />
+                <path
+                  d="M174.184 204.83L179.815 201.455C180.044 201.318 180 200.973 179.744 200.898L175.548 199.665C175.468 199.641 175.383 199.651 175.311 199.692L169.983 202.696C169.76 202.822 169.78 203.149 170.016 203.247L173.91 204.851C173.999 204.887 174.1 204.88 174.184 204.83Z"
+                  fill="#524296" />
+                <path
+                  d="M174.268 204.394L179.767 201.167C179.875 201.103 179.855 200.943 179.736 200.906L175.602 199.681C175.481 199.619 175.36 199.65 175.265 199.718L170.038 202.665C169.932 202.725 169.943 202.881 170.055 202.925L173.808 204.429C173.957 204.489 174.127 204.476 174.268 204.394Z"
+                  fill="#6048AA" />
+                <path
+                  d="M182.4 200.353L188.031 196.977C188.261 196.84 188.217 196.495 187.96 196.421L183.764 195.188C183.684 195.164 183.6 195.174 183.528 195.215L178.199 198.219C177.976 198.345 177.996 198.671 178.233 198.77L182.128 200.374C182.216 200.41 182.317 200.403 182.4 200.353Z"
+                  fill="#524296" />
+                <path
+                  d="M182.483 199.915L187.982 196.688C188.091 196.625 188.071 196.464 187.951 196.428L183.817 195.202C183.697 195.14 183.576 195.171 183.481 195.24L178.253 198.187C178.148 198.246 178.158 198.402 178.271 198.447L182.024 199.95C182.173 200.011 182.343 199.998 182.483 199.915Z"
+                  fill="#6048AA" />
+                <path
+                  d="M190.532 196.052L196.163 192.676C196.392 192.539 196.348 192.194 196.092 192.119L191.896 190.886C191.816 190.863 191.731 190.873 191.659 190.914L186.33 193.918C186.107 194.044 186.127 194.37 186.364 194.469L190.258 196.073C190.347 196.109 190.449 196.101 190.532 196.052Z"
+                  fill="#524296" />
+                <path
+                  d="M190.615 195.615L196.114 192.387C196.223 192.324 196.203 192.162 196.083 192.127L191.949 190.902C191.828 190.839 191.708 190.87 191.613 190.939L186.385 193.886C186.279 193.946 186.289 194.101 186.403 194.146L190.156 195.65C190.305 195.709 190.476 195.697 190.615 195.615Z"
+                  fill="#6048AA" />
+                <path
+                  d="M198.84 190.794L204.471 187.419C204.7 187.282 204.655 186.937 204.4 186.862L200.203 185.629C200.124 185.605 200.039 185.615 199.967 185.656L194.638 188.661C194.415 188.787 194.435 189.113 194.672 189.211L198.566 190.816C198.654 190.852 198.756 190.844 198.84 190.794Z"
+                  fill="#524296" />
+                <path
+                  d="M198.922 190.357L204.421 187.13C204.529 187.066 204.509 186.905 204.39 186.869L200.256 185.644C200.135 185.581 200.014 185.613 199.92 185.681L194.692 188.628C194.586 188.688 194.596 188.842 194.709 188.888L198.462 190.392C198.613 190.452 198.782 190.439 198.922 190.357Z"
+                  fill="#6048AA" />
+                <path
+                  d="M207.056 186.317L212.687 182.942C212.916 182.805 212.871 182.46 212.616 182.385L208.42 181.152C208.34 181.128 208.255 181.138 208.183 181.179L202.855 184.184C202.632 184.309 202.652 184.636 202.888 184.734L206.782 186.338C206.87 186.375 206.972 186.367 207.056 186.317Z"
+                  fill="#524296" />
+                <path
+                  d="M207.137 185.88L212.637 182.653C212.745 182.59 212.725 182.429 212.605 182.393L208.471 181.167C208.351 181.105 208.23 181.136 208.135 181.205L202.908 184.151C202.802 184.211 202.812 184.366 202.925 184.412L206.678 185.915C206.829 185.975 206.998 185.963 207.137 185.88Z"
+                  fill="#6048AA" />
+                <path
+                  d="M214.56 182.018L220.191 178.643C220.42 178.506 220.376 178.162 220.12 178.086L215.924 176.853C215.844 176.83 215.759 176.839 215.687 176.881L210.359 179.885C210.136 180.011 210.155 180.337 210.392 180.435L214.287 182.041C214.374 182.076 214.476 182.068 214.56 182.018Z"
+                  fill="#524296" />
+                <path
+                  d="M214.642 181.582L220.141 178.355C220.249 178.291 220.229 178.129 220.109 178.094L215.975 176.869C215.854 176.807 215.733 176.838 215.638 176.906L210.411 179.853C210.305 179.913 210.315 180.069 210.428 180.113L214.181 181.617C214.332 181.677 214.502 181.664 214.642 181.582Z"
+                  fill="#6048AA" />
+                <path
+                  d="M222.013 178.055L227.644 174.679C227.874 174.542 227.83 174.197 227.573 174.122L223.377 172.889C223.298 172.866 223.213 172.876 223.141 172.917L217.812 175.921C217.589 176.047 217.609 176.373 217.846 176.472L221.741 178.077C221.829 178.113 221.931 178.104 222.013 178.055Z"
+                  fill="#524296" />
+                <path
+                  d="M222.097 177.619L227.596 174.391C227.704 174.328 227.684 174.167 227.565 174.131L223.431 172.905C223.31 172.843 223.189 172.874 223.094 172.943L217.867 175.89C217.761 175.95 217.771 176.105 217.884 176.15L221.637 177.653C221.787 177.713 221.957 177.701 222.097 177.619Z"
+                  fill="#6048AA" />
+                <path
+                  d="M119.32 276.346L126.846 271.793C127.127 271.623 127.095 271.184 126.792 271.063L118.904 267.91C118.801 267.869 118.685 267.876 118.588 267.932L110.987 272.239C110.701 272.401 110.722 272.843 111.023 272.972L118.986 276.372C119.095 276.417 119.218 276.408 119.32 276.346Z"
+                  fill="#524296" />
+                <path
+                  d="M119.181 275.547L126.907 271.135L119.053 267.97C118.843 267.831 118.623 267.88 118.447 268.011L110.987 272.239L119.181 275.547Z"
+                  fill="#6048AA" />
+                <path
+                  d="M130.4 270.123L137.926 265.571C138.207 265.4 138.175 264.962 137.872 264.841L129.984 261.687C129.881 261.646 129.765 261.653 129.668 261.709L122.068 266.017C121.781 266.178 121.802 266.621 122.104 266.749L130.067 270.149C130.175 270.193 130.298 270.184 130.4 270.123Z"
+                  fill="#524296" />
+                <path
+                  d="M130.261 269.323L137.987 264.911L130.134 261.746C129.923 261.606 129.703 261.656 129.527 261.788L122.068 266.016L130.261 269.323Z"
+                  fill="#6048AA" />
+                <path
+                  d="M141.695 264.064L149.221 259.512C149.502 259.341 149.47 258.903 149.167 258.782L141.279 255.628C141.176 255.587 141.06 255.595 140.963 255.651L133.362 259.958C133.076 260.12 133.097 260.562 133.398 260.69L141.361 264.089C141.471 264.134 141.593 264.126 141.695 264.064Z"
+                  fill="#524296" />
+                <path
+                  d="M141.556 263.264L149.282 258.852L141.429 255.687C141.218 255.548 140.998 255.598 140.822 255.728L133.363 259.956L141.556 263.264Z"
+                  fill="#6048AA" />
+                <path
+                  d="M152.75 257.682L160.275 253.129C160.557 252.959 160.524 252.52 160.222 252.399L152.334 249.246C152.23 249.204 152.115 249.212 152.017 249.268L144.417 253.575C144.131 253.737 144.152 254.179 144.453 254.307L152.416 257.708C152.524 257.753 152.648 257.744 152.75 257.682Z"
+                  fill="#524296" />
+                <path
+                  d="M152.61 256.883L160.337 252.471L152.483 249.306C152.273 249.167 152.052 249.216 151.877 249.347L144.417 253.575L152.61 256.883Z"
+                  fill="#6048AA" />
+                <path
+                  d="M163.522 251.86L171.048 247.308C171.329 247.137 171.297 246.699 170.994 246.577L163.106 243.423C163.003 243.382 162.887 243.389 162.79 243.445L155.189 247.752C154.903 247.914 154.924 248.356 155.226 248.485L163.188 251.885C163.297 251.931 163.42 251.922 163.522 251.86Z"
+                  fill="#524296" />
+                <path
+                  d="M163.382 251.06L171.109 246.649L163.255 243.484C163.046 243.344 162.824 243.394 162.649 243.525L155.189 247.752L163.382 251.06Z"
+                  fill="#6048AA" />
+                <path
+                  d="M173.834 245.777L181.36 241.224C181.641 241.054 181.609 240.615 181.306 240.495L173.418 237.341C173.315 237.3 173.199 237.307 173.102 237.363L165.502 241.67C165.215 241.832 165.236 242.274 165.538 242.403L173.5 245.803C173.61 245.848 173.732 245.839 173.834 245.777Z"
+                  fill="#524296" />
+                <path
+                  d="M173.694 244.977L181.42 240.566L173.567 237.401C173.358 237.261 173.136 237.311 172.961 237.443L165.501 241.67L173.694 244.977Z"
+                  fill="#6048AA" />
+                <path
+                  d="M184.761 239.681L192.287 235.128C192.568 234.958 192.536 234.519 192.233 234.398L184.345 231.245C184.242 231.203 184.126 231.211 184.029 231.267L176.429 235.574C176.142 235.736 176.163 236.178 176.465 236.306L184.427 239.707C184.537 239.752 184.66 239.742 184.761 239.681Z"
+                  fill="#524296" />
+                <path
+                  d="M184.623 238.879L192.349 234.467L184.496 231.303C184.285 231.163 184.065 231.213 183.889 231.345L176.43 235.572L184.623 238.879Z"
+                  fill="#6048AA" />
+                <path
+                  d="M195.843 233.457L203.368 228.905C203.65 228.734 203.617 228.296 203.315 228.175L195.427 225.021C195.323 224.98 195.208 224.987 195.11 225.043L187.51 229.35C187.224 229.512 187.245 229.955 187.546 230.083L195.509 233.483C195.617 233.528 195.741 233.519 195.843 233.457Z"
+                  fill="#524296" />
+                <path
+                  d="M195.703 232.656L203.429 228.244L195.576 225.079C195.366 224.94 195.145 224.99 194.97 225.121L187.51 229.348L195.703 232.656Z"
+                  fill="#6048AA" />
+                <path
+                  d="M207.138 227.398L214.663 222.846C214.945 222.675 214.912 222.237 214.61 222.115L206.722 218.961C206.618 218.92 206.502 218.927 206.405 218.983L198.805 223.29C198.519 223.452 198.54 223.895 198.841 224.023L206.804 227.422C206.912 227.469 207.036 227.461 207.138 227.398Z"
+                  fill="#524296" />
+                <path
+                  d="M206.998 226.599L214.724 222.187L206.871 219.022C206.66 218.882 206.44 218.932 206.264 219.063L198.805 223.29L206.998 226.599Z"
+                  fill="#6048AA" />
+                <path
+                  d="M218.19 221.017L225.716 216.465C225.997 216.294 225.965 215.856 225.662 215.735L217.774 212.581C217.671 212.54 217.555 212.547 217.458 212.603L209.857 216.911C209.571 217.072 209.592 217.515 209.894 217.643L217.856 221.043C217.965 221.087 218.088 221.078 218.19 221.017Z"
+                  fill="#524296" />
+                <path
+                  d="M218.051 220.217L225.777 215.805L217.924 212.64C217.715 212.5 217.493 212.55 217.317 212.682L209.858 216.91L218.051 220.217Z"
+                  fill="#6048AA" />
+                <path
+                  d="M228.965 215.195L236.49 210.642C236.772 210.471 236.739 210.033 236.437 209.911L228.549 206.757C228.445 206.716 228.329 206.724 228.232 206.78L220.632 211.087C220.345 211.249 220.367 211.691 220.668 211.819L228.631 215.218C228.739 215.266 228.862 215.256 228.965 215.195Z"
+                  fill="#524296" />
+                <path
+                  d="M228.825 214.394L236.551 209.983L228.698 206.818C228.489 206.678 228.267 206.728 228.091 206.859L220.632 211.086L228.825 214.394Z"
+                  fill="#6048AA" />
+                <path
+                  d="M239.276 209.112L246.802 204.56C247.083 204.389 247.051 203.951 246.748 203.83L238.86 200.676C238.757 200.635 238.641 200.643 238.544 200.699L230.944 205.006C230.657 205.168 230.678 205.61 230.98 205.738L238.943 209.138C239.051 209.182 239.174 209.173 239.276 209.112Z"
+                  fill="#524296" />
+                <path
+                  d="M239.136 208.311L246.862 203.9L239.009 200.735C238.799 200.595 238.578 200.645 238.403 200.776L230.943 205.003L239.136 208.311Z"
+                  fill="#6048AA" />
+                <path
+                  d="M250.094 202.892L257.62 198.34C257.901 198.169 257.869 197.731 257.566 197.61L249.678 194.456C249.575 194.415 249.459 194.422 249.362 194.478L241.762 198.786C241.475 198.947 241.496 199.39 241.798 199.518L249.76 202.918C249.869 202.962 249.992 202.953 250.094 202.892Z"
+                  fill="#524296" />
+                <path
+                  d="M249.954 202.092L257.681 197.68L249.827 194.515C249.617 194.375 249.396 194.425 249.221 194.556L241.761 198.783L249.954 202.092Z"
+                  fill="#6048AA" />
+                <path
+                  d="M141.691 273.882L149.217 269.329C149.498 269.159 149.466 268.72 149.163 268.598L141.275 265.444C141.172 265.403 141.056 265.411 140.959 265.467L133.359 269.774C133.072 269.936 133.093 270.378 133.395 270.506L141.358 273.907C141.466 273.953 141.589 273.943 141.691 273.882Z"
+                  fill="#524296" />
+                <path
+                  d="M141.552 273.08L149.278 268.669L141.425 265.504C141.214 265.364 140.994 265.414 140.818 265.545L133.359 269.772L141.552 273.08Z"
+                  fill="#6048AA" />
+                <path
+                  d="M152.986 267.823L160.512 263.271C160.793 263.1 160.761 262.661 160.458 262.539L152.57 259.386C152.467 259.345 152.351 259.352 152.254 259.408L144.653 263.715C144.367 263.877 144.388 264.319 144.689 264.448L152.652 267.847C152.761 267.894 152.884 267.884 152.986 267.823Z"
+                  fill="#524296" />
+                <path
+                  d="M152.846 267.024L160.572 262.612L152.719 259.447C152.509 259.308 152.288 259.357 152.113 259.488L144.653 263.716L152.846 267.024Z"
+                  fill="#6048AA" />
+                <path
+                  d="M164.039 261.442L171.565 256.889C171.846 256.719 171.814 256.28 171.511 256.158L163.623 253.004C163.52 252.963 163.404 252.971 163.307 253.027L155.707 257.334C155.42 257.496 155.441 257.938 155.743 258.066L163.705 261.465C163.815 261.513 163.937 261.504 164.039 261.442Z"
+                  fill="#524296" />
+                <path
+                  d="M163.9 260.642L171.626 256.23L163.773 253.065C163.563 252.926 163.342 252.976 163.167 253.106L155.707 257.334L163.9 260.642Z"
+                  fill="#6048AA" />
+                <path
+                  d="M174.813 255.619L182.339 251.067C182.62 250.896 182.588 250.458 182.285 250.337L174.397 247.183C174.294 247.142 174.178 247.149 174.081 247.205L166.48 251.513C166.194 251.674 166.215 252.117 166.516 252.245L174.479 255.645C174.588 255.69 174.711 255.68 174.813 255.619Z"
+                  fill="#524296" />
+                <path
+                  d="M174.674 254.82L182.4 250.408L174.547 247.243C174.336 247.104 174.116 247.153 173.94 247.284L166.48 251.512L174.674 254.82Z"
+                  fill="#6048AA" />
+                <path
+                  d="M185.125 249.538L192.651 244.985C192.932 244.814 192.9 244.376 192.597 244.255L184.709 241.102C184.606 241.06 184.49 241.068 184.393 241.124L176.792 245.431C176.506 245.593 176.527 246.035 176.828 246.163L184.791 249.564C184.9 249.607 185.023 249.599 185.125 249.538Z"
+                  fill="#524296" />
+                <path
+                  d="M184.986 248.737L192.712 244.325L184.859 241.16C184.648 241.02 184.428 241.07 184.252 241.202L176.792 245.43L184.986 248.737Z"
+                  fill="#6048AA" />
+                <path
+                  d="M196.052 243.439L203.578 238.887C203.859 238.716 203.827 238.278 203.524 238.156L195.636 235.002C195.533 234.961 195.417 234.968 195.32 235.024L187.72 239.331C187.433 239.493 187.454 239.936 187.756 240.064L195.718 243.464C195.828 243.51 195.95 243.502 196.052 243.439Z"
+                  fill="#524296" />
+                <path
+                  d="M195.912 242.64L203.639 238.229L195.785 235.064C195.575 234.924 195.354 234.974 195.179 235.106L187.719 239.333L195.912 242.64Z"
+                  fill="#6048AA" />
+                <path
+                  d="M207.133 237.215L214.658 232.663C214.94 232.492 214.907 232.054 214.605 231.932L206.717 228.778C206.613 228.737 206.497 228.744 206.4 228.8L198.8 233.107C198.513 233.269 198.535 233.711 198.836 233.84L206.799 237.24C206.908 237.286 207.03 237.277 207.133 237.215Z"
+                  fill="#524296" />
+                <path
+                  d="M206.994 236.415L214.72 232.004L206.867 228.839C206.658 228.699 206.436 228.749 206.26 228.88L198.801 233.107L206.994 236.415Z"
+                  fill="#6048AA" />
+                <path
+                  d="M218.427 231.157L225.953 226.604C226.234 226.434 226.202 225.995 225.899 225.874L218.011 222.721C217.908 222.68 217.792 222.687 217.695 222.743L210.095 227.05C209.808 227.212 209.829 227.654 210.131 227.783L218.093 231.182C218.203 231.228 218.325 231.219 218.427 231.157Z"
+                  fill="#524296" />
+                <path
+                  d="M218.289 230.358L226.015 225.946L218.162 222.781C217.953 222.642 217.731 222.691 217.556 222.823L210.096 227.051L218.289 230.358Z"
+                  fill="#6048AA" />
+                <path
+                  d="M229.482 224.776L237.007 220.224C237.289 220.053 237.256 219.615 236.954 219.493L229.066 216.339C228.962 216.298 228.846 216.305 228.749 216.361L221.149 220.668C220.862 220.83 220.884 221.272 221.185 221.401L229.148 224.801C229.256 224.847 229.38 224.838 229.482 224.776Z"
+                  fill="#524296" />
+                <path
+                  d="M229.342 223.976L237.068 219.564L229.215 216.399C229.005 216.26 228.784 216.31 228.608 216.442L221.149 220.669L229.342 223.976Z"
+                  fill="#6048AA" />
+                <path
+                  d="M240.254 218.954L247.78 214.401C248.061 214.231 248.029 213.792 247.726 213.671L239.838 210.518C239.735 210.476 239.619 210.484 239.522 210.54L231.922 214.847C231.635 215.009 231.656 215.451 231.958 215.579L239.921 218.98C240.03 219.025 240.152 219.016 240.254 218.954Z"
+                  fill="#524296" />
+                <path
+                  d="M240.116 218.154L247.842 213.742L239.989 210.577C239.778 210.438 239.558 210.488 239.382 210.619L231.922 214.846L240.116 218.154Z"
+                  fill="#6048AA" />
+                <path
+                  d="M250.567 212.872L258.093 208.319C258.374 208.149 258.342 207.71 258.039 207.589L250.151 204.436C250.048 204.394 249.932 204.402 249.835 204.458L242.234 208.765C241.948 208.927 241.969 209.369 242.271 209.497L250.233 212.898C250.342 212.943 250.465 212.934 250.567 212.872Z"
+                  fill="#524296" />
+                <path
+                  d="M250.428 212.07L258.154 207.658L250.301 204.494C250.09 204.354 249.87 204.404 249.694 204.535L242.234 208.762L250.428 212.07Z"
+                  fill="#6048AA" />
+                <path
+                  d="M260.479 206.978L268.005 202.425C268.286 202.255 268.254 201.816 267.951 201.694L260.063 198.54C259.96 198.499 259.844 198.507 259.747 198.563L252.147 202.87C251.86 203.032 251.881 203.474 252.183 203.602L260.145 207.003C260.254 207.048 260.377 207.039 260.479 206.978Z"
+                  fill="#524296" />
+                <path
+                  d="M260.339 206.178L268.066 201.766L260.212 198.601C260.003 198.462 259.781 198.512 259.606 198.643L252.146 202.87L260.339 206.178Z"
+                  fill="#6048AA" />
+                <path
+                  d="M270.661 201.324L277.892 196.949C278.162 196.786 278.131 196.364 277.841 196.247L270.262 193.216C270.162 193.177 270.051 193.184 269.958 193.238L262.655 197.375C262.38 197.531 262.401 197.956 262.69 198.079L270.34 201.346C270.445 201.392 270.563 201.383 270.661 201.324Z"
+                  fill="#524296" />
+                <path
+                  d="M270.527 200.555L277.95 196.317L270.406 193.275C270.204 193.141 269.993 193.189 269.823 193.315L262.656 197.377L270.527 200.555Z"
+                  fill="#6048AA" />
+                <path
+                  d="M260.535 197.479L268.061 192.926C268.342 192.756 268.31 192.317 268.007 192.195L260.119 189.041C260.016 189 259.9 189.008 259.803 189.064L252.202 193.371C251.916 193.533 251.937 193.975 252.239 194.103L260.201 197.502C260.311 197.549 260.433 197.54 260.535 197.479Z"
+                  fill="#524296" />
+                <path
+                  d="M260.397 196.678L268.123 192.266L260.27 189.101C260.06 188.962 259.839 189.012 259.663 189.144L252.204 193.371L260.397 196.678Z"
+                  fill="#6048AA" />
+                <path
+                  d="M152.98 278.158L160.506 273.605C160.787 273.435 160.755 272.996 160.452 272.875L152.564 269.722C152.461 269.681 152.345 269.688 152.248 269.744L144.647 274.051C144.361 274.213 144.382 274.655 144.683 274.784L152.646 278.183C152.756 278.229 152.878 278.22 152.98 278.158Z"
+                  fill="#524296" />
+                <path
+                  d="M152.841 277.358L160.568 272.947L152.714 269.782C152.504 269.642 152.283 269.692 152.108 269.823L144.648 274.05L152.841 277.358Z"
+                  fill="#6048AA" />
+                <path
+                  d="M164.034 272.088L171.56 267.536C171.841 267.365 171.809 266.927 171.506 266.805L163.618 263.651C163.515 263.61 163.399 263.617 163.302 263.673L155.701 267.98C155.415 268.142 155.436 268.584 155.737 268.713L163.7 272.113C163.808 272.158 163.932 272.149 164.034 272.088Z"
+                  fill="#524296" />
+                <path
+                  d="M163.894 271.287L171.62 266.876L163.767 263.711C163.557 263.571 163.336 263.621 163.161 263.752L155.701 267.979L163.894 271.287Z"
+                  fill="#6048AA" />
+                <path
+                  d="M174.65 265.706L182.175 261.154C182.457 260.983 182.424 260.545 182.122 260.424L174.234 257.27C174.13 257.229 174.014 257.236 173.917 257.292L166.317 261.6C166.03 261.761 166.052 262.204 166.353 262.332L174.316 265.732C174.425 265.777 174.548 265.768 174.65 265.706Z"
+                  fill="#524296" />
+                <path
+                  d="M174.51 264.906L182.236 260.494L174.383 257.329C174.173 257.19 173.952 257.24 173.777 257.371L166.317 261.598L174.51 264.906Z"
+                  fill="#6048AA" />
+                <path
+                  d="M185.448 259.678L192.973 255.126C193.255 254.955 193.222 254.516 192.92 254.394L185.031 251.241C184.928 251.2 184.812 251.207 184.715 251.263L177.115 255.57C176.828 255.732 176.849 256.174 177.151 256.303L185.114 259.703C185.222 259.749 185.345 259.74 185.448 259.678Z"
+                  fill="#524296" />
+                <path
+                  d="M185.308 258.877L193.034 254.466L185.181 251.301C184.97 251.161 184.75 251.211 184.574 251.342L177.115 255.569L185.308 258.877Z"
+                  fill="#6048AA" />
+                <path
+                  d="M195.957 253.66L247.236 224.973C248.216 224.561 247.97 223.844 247.154 223.713L240.018 220.861C239.821 220.782 239.598 220.797 239.413 220.902L188.366 249.828C187.851 250.121 187.909 250.882 188.464 251.091L195.365 253.706C195.561 253.777 195.776 253.76 195.957 253.66Z"
+                  fill="#524296" />
+                <path
+                  d="M195.746 252.958L247.547 224.203C247.678 224.131 247.666 223.939 247.528 223.884L240.019 220.858C239.81 220.718 239.588 220.768 239.413 220.9L188.383 249.817C188.253 249.89 188.267 250.081 188.405 250.136L195.594 252.968C195.644 252.988 195.699 252.984 195.746 252.958Z"
+                  fill="#6048AA" />
+                <path
+                  d="M250.561 223.166L258.086 218.614C258.368 218.443 258.336 218.004 258.033 217.884L250.145 214.73C250.041 214.689 249.926 214.696 249.828 214.752L242.228 219.059C241.942 219.221 241.963 219.664 242.264 219.792L250.227 223.192C250.335 223.236 250.459 223.227 250.561 223.166Z"
+                  fill="#524296" />
+                <path
+                  d="M250.421 222.367L258.147 217.955L250.294 214.79C250.085 214.65 249.863 214.7 249.688 214.831L242.228 219.058L250.421 222.367Z"
+                  fill="#6048AA" />
+                <path
+                  d="M261.037 217.135L268.563 212.582C268.844 212.412 268.812 211.973 268.509 211.852L260.621 208.699C260.518 208.658 260.402 208.665 260.305 208.721L252.705 213.028C252.418 213.19 252.439 213.632 252.741 213.761L260.704 217.161C260.812 217.206 260.935 217.197 261.037 217.135Z"
+                  fill="#524296" />
+                <path
+                  d="M260.898 216.336L268.624 211.924L260.771 208.759C260.562 208.62 260.34 208.669 260.164 208.8L252.705 213.028L260.898 216.336Z"
+                  fill="#6048AA" />
+                <path
+                  d="M270.615 211.328L278.141 206.776C278.423 206.605 278.39 206.167 278.088 206.046L270.199 202.892C270.096 202.851 269.98 202.858 269.883 202.914L262.283 207.222C261.996 207.383 262.017 207.826 262.319 207.954L270.282 211.354C270.391 211.398 270.513 211.389 270.615 211.328Z"
+                  fill="#524296" />
+                <path
+                  d="M270.478 210.528L278.204 206.116L270.351 202.951C270.14 202.812 269.92 202.861 269.744 202.992L262.284 207.22L270.478 210.528Z"
+                  fill="#6048AA" />
+                <path
+                  d="M280.186 205.26L287.31 200.95C287.576 200.789 287.546 200.373 287.26 200.259L279.793 197.273C279.694 197.235 279.586 197.242 279.494 197.294L272.299 201.371C272.028 201.524 272.049 201.943 272.333 202.065L279.87 205.283C279.973 205.327 280.09 205.318 280.186 205.26Z"
+                  fill="#524296" />
+                <path
+                  d="M280.056 204.502L287.37 200.325L279.936 197.33C279.737 197.198 279.529 197.245 279.362 197.37L272.301 201.372L280.056 204.502Z"
+                  fill="#6048AA" />
+                <path
+                  d="M129.689 282.032L138.376 276.428C138.94 276.089 138.884 275.392 138.276 275.141L130.605 271.903C130.413 271.822 130.196 271.838 130.016 271.946L121.603 277.003C121.137 277.351 121.165 278.443 121.708 278.627L129.057 282.078C129.262 282.171 129.498 282.155 129.689 282.032Z"
+                  fill="#524296" />
+                <path
+                  d="M130.261 280.782L138.183 275.842C138.462 275.668 138.432 275.232 138.132 275.105L130.629 271.911C130.408 271.757 130.176 271.811 129.992 271.958L122.184 276.652C121.728 276.926 121.76 277.631 122.239 277.855L128.694 280.879C129.2 281.116 129.783 281.08 130.261 280.782Z"
+                  fill="#6048AA" />
+                <path
+                  d="M141.091 286.095L149.777 280.491C150.342 280.152 150.286 279.455 149.678 279.204L142.006 275.966C141.815 275.885 141.598 275.901 141.417 276.009L133.005 281.066C132.539 281.414 132.566 282.506 133.11 282.69L140.458 286.141C140.665 286.234 140.9 286.218 141.091 286.095Z"
+                  fill="#524296" />
+                <path
+                  d="M141.664 284.846L149.586 279.906C149.865 279.731 149.835 279.296 149.535 279.167L142.032 275.974C141.811 275.819 141.58 275.874 141.395 276.021L133.587 280.714C133.131 280.988 133.163 281.693 133.642 281.917L140.097 284.942C140.603 285.18 141.186 285.143 141.664 284.846Z"
+                  fill="#6048AA" />
+                <path
+                  d="M86.4026 263.156L93.9681 258.669C94.2508 258.501 94.2222 258.061 93.9207 257.938L86.0601 254.714C85.9567 254.672 85.8421 254.68 85.7437 254.734L78.106 258.974C77.8183 259.134 77.8357 259.576 78.1359 259.707L86.0688 263.177C86.1772 263.224 86.2992 263.215 86.4026 263.156Z"
+                  fill="#524296" />
+                <path
+                  d="M86.2705 262.352L94.0353 258.009L86.2107 254.774C86.0015 254.632 85.781 254.681 85.6041 254.811L78.1072 258.972L86.2705 262.352Z"
+                  fill="#6048AA" />
+                <path
+                  d="M97.5364 257.029L105.102 252.542C105.385 252.374 105.356 251.934 105.055 251.811L97.1951 248.588C97.0917 248.545 96.9771 248.553 96.8787 248.606L89.241 252.846C88.9533 253.006 88.9707 253.448 89.2709 253.58L97.2038 257.05C97.3109 257.098 97.4342 257.09 97.5364 257.029Z"
+                  fill="#524296" />
+                <path
+                  d="M97.4048 256.228L105.17 251.885L97.345 248.65C97.1357 248.509 96.9153 248.556 96.7384 248.686L89.2415 252.847L97.4048 256.228Z"
+                  fill="#6048AA" />
+                <path
+                  d="M108.885 251.071L116.45 246.584C116.733 246.416 116.706 245.976 116.404 245.853L108.544 242.63C108.44 242.587 108.326 242.595 108.227 242.648L100.59 246.888C100.302 247.048 100.319 247.49 100.62 247.622L108.551 251.092C108.66 251.139 108.783 251.132 108.885 251.071Z"
+                  fill="#524296" />
+                <path
+                  d="M108.753 250.269L116.517 245.926L108.693 242.691C108.484 242.551 108.263 242.598 108.086 242.727L100.589 246.889L108.753 250.269Z"
+                  fill="#6048AA" />
+                <path
+                  d="M119.994 244.787L127.56 240.301C127.842 240.133 127.814 239.693 127.512 239.57L119.652 236.346C119.548 236.304 119.434 236.311 119.335 236.366L111.698 240.606C111.41 240.765 111.427 241.208 111.727 241.34L119.66 244.81C119.769 244.856 119.892 244.847 119.994 244.787Z"
+                  fill="#524296" />
+                <path
+                  d="M119.862 243.986L127.627 239.642L119.802 236.408C119.594 236.267 119.372 236.314 119.195 236.444L111.698 240.605L119.862 243.986Z"
+                  fill="#6048AA" />
+                <path
+                  d="M130.819 239.059L138.384 234.573C138.667 234.405 138.638 233.965 138.337 233.842L130.476 230.618C130.373 230.576 130.258 230.583 130.16 230.638L122.522 234.878C122.234 235.037 122.252 235.48 122.552 235.61L130.485 239.081C130.593 239.128 130.715 239.12 130.819 239.059Z"
+                  fill="#524296" />
+                <path
+                  d="M130.687 238.258L138.451 233.914L130.627 230.68C130.419 230.539 130.197 230.586 130.02 230.716L122.523 234.877L130.687 238.258Z"
+                  fill="#6048AA" />
+                <path
+                  d="M141.184 233.067L148.75 228.581C149.032 228.413 149.005 227.974 148.702 227.85L140.843 224.626C140.739 224.584 140.625 224.591 140.526 224.645L132.889 228.885C132.601 229.044 132.618 229.486 132.919 229.618L140.85 233.088C140.957 233.136 141.081 233.128 141.184 233.067Z"
+                  fill="#524296" />
+                <path
+                  d="M141.052 232.267L148.817 227.924L140.992 224.689C140.784 224.549 140.563 224.596 140.386 224.726L132.889 228.887L141.052 232.267Z"
+                  fill="#6048AA" />
+                <path
+                  d="M152.166 227.067L159.731 222.58C160.014 222.412 159.985 221.972 159.684 221.849L151.823 218.626C151.72 218.583 151.605 218.591 151.507 218.646L143.869 222.885C143.581 223.045 143.599 223.487 143.899 223.619L151.832 227.089C151.94 227.135 152.062 227.128 152.166 227.067Z"
+                  fill="#524296" />
+                <path
+                  d="M152.034 226.265L159.798 221.922L151.974 218.687C151.765 218.547 151.544 218.594 151.367 218.724L143.87 222.885L152.034 226.265Z"
+                  fill="#6048AA" />
+                <path
+                  d="M163.299 220.941L170.865 216.455C171.147 216.287 171.12 215.847 170.817 215.724L162.958 212.5C162.854 212.458 162.74 212.465 162.641 212.519L155.004 216.759C154.716 216.918 154.733 217.36 155.034 217.492L162.965 220.962C163.074 221.01 163.197 221.002 163.299 220.941Z"
+                  fill="#524296" />
+                <path
+                  d="M163.167 220.141L170.932 215.798L163.107 212.563C162.899 212.421 162.677 212.47 162.501 212.599L155.004 216.761L163.167 220.141Z"
+                  fill="#6048AA" />
+                <path
+                  d="M174.647 214.982L182.213 210.496C182.495 210.328 182.468 209.889 182.167 209.765L174.306 206.541C174.203 206.499 174.088 206.506 173.99 206.56L166.352 210.8C166.064 210.959 166.082 211.401 166.382 211.533L174.313 215.003C174.422 215.051 174.545 215.043 174.647 214.982Z"
+                  fill="#524296" />
+                <path
+                  d="M174.515 214.182L182.28 209.839L174.455 206.604C174.246 206.462 174.025 206.511 173.849 206.64L166.352 210.802L174.515 214.182Z"
+                  fill="#6048AA" />
+                <path
+                  d="M185.756 208.699L193.322 204.213C193.605 204.044 193.576 203.605 193.274 203.481L185.414 200.258C185.31 200.216 185.196 200.223 185.097 200.277L177.46 204.517C177.172 204.676 177.189 205.118 177.49 205.25L185.423 208.72C185.531 208.768 185.654 208.76 185.756 208.699Z"
+                  fill="#524296" />
+                <path
+                  d="M185.624 207.898L193.389 203.554L185.564 200.32C185.356 200.179 185.135 200.226 184.958 200.356L177.461 204.517L185.624 207.898Z"
+                  fill="#6048AA" />
+                <path
+                  d="M196.582 202.972L204.147 198.486C204.43 198.317 204.401 197.878 204.1 197.754L196.239 194.531C196.136 194.489 196.021 194.496 195.923 194.55L188.285 198.789C187.997 198.949 188.015 199.391 188.315 199.523L196.247 202.993C196.356 203.041 196.478 203.033 196.582 202.972Z"
+                  fill="#524296" />
+                <path
+                  d="M196.449 202.17L204.214 197.826L196.389 194.592C196.181 194.451 195.96 194.498 195.783 194.628L188.286 198.789L196.449 202.17Z"
+                  fill="#6048AA" />
+                <path
+                  d="M206.946 196.98L214.511 192.494C214.794 192.326 214.765 191.886 214.464 191.763L206.603 188.539C206.5 188.497 206.385 188.504 206.287 188.558L198.649 192.798C198.361 192.957 198.379 193.399 198.679 193.531L206.612 197.002C206.72 197.049 206.843 197.04 206.946 196.98Z"
+                  fill="#524296" />
+                <path
+                  d="M206.813 196.178L214.578 191.835L206.754 188.6C206.544 188.458 206.324 188.507 206.147 188.636L198.65 192.798L206.813 196.178Z"
+                  fill="#6048AA" />
+                <path
+                  d="M217.818 190.855L225.383 186.369C225.666 186.201 225.639 185.761 225.336 185.638L217.477 182.414C217.373 182.372 217.259 182.379 217.16 182.433L209.523 186.673C209.235 186.832 209.252 187.274 209.552 187.406L217.484 190.877C217.592 190.924 217.716 190.916 217.818 190.855Z"
+                  fill="#524296" />
+                <path
+                  d="M217.686 190.054L225.451 185.711L217.626 182.476C217.418 182.335 217.197 182.383 217.02 182.512L209.523 186.674L217.686 190.054Z"
+                  fill="#6048AA" />
+                <path
+                  d="M108.794 260.888L116.359 256.402C116.642 256.234 116.614 255.794 116.313 255.671L108.453 252.447C108.349 252.405 108.235 252.412 108.136 252.467L100.499 256.707C100.211 256.867 100.228 257.309 100.528 257.44L108.46 260.91C108.568 260.957 108.692 260.948 108.794 260.888Z"
+                  fill="#524296" />
+                <path
+                  d="M108.662 260.086L116.427 255.743L108.603 252.508C108.395 252.366 108.173 252.415 107.996 252.544L100.499 256.706L108.662 260.086Z"
+                  fill="#6048AA" />
+                <path
+                  d="M120.142 254.93L127.708 250.444C127.991 250.275 127.963 249.836 127.66 249.712L119.8 246.489C119.696 246.447 119.582 246.454 119.483 246.508L111.846 250.747C111.558 250.907 111.575 251.349 111.876 251.481L119.807 254.951C119.917 254.999 120.04 254.991 120.142 254.93Z"
+                  fill="#524296" />
+                <path
+                  d="M120.01 254.128L127.775 249.785L119.95 246.55C119.742 246.41 119.521 246.457 119.344 246.586L111.847 250.748L120.01 254.128Z"
+                  fill="#6048AA" />
+                <path
+                  d="M131.251 248.647L138.817 244.16C139.1 243.992 139.071 243.553 138.77 243.429L130.909 240.206C130.806 240.163 130.691 240.171 130.593 240.224L122.955 244.464C122.667 244.624 122.685 245.066 122.985 245.198L130.918 248.668C131.026 248.715 131.149 248.708 131.251 248.647Z"
+                  fill="#524296" />
+                <path
+                  d="M131.119 247.845L138.884 243.502L131.06 240.267C130.85 240.126 130.63 240.174 130.453 240.303L122.956 244.465L131.119 247.845Z"
+                  fill="#6048AA" />
+                <path
+                  d="M142.076 242.918L149.642 238.432C149.925 238.264 149.896 237.824 149.595 237.701L141.734 234.477C141.631 234.435 141.516 234.442 141.418 234.496L133.78 238.736C133.492 238.895 133.51 239.337 133.81 239.469L141.741 242.939C141.85 242.987 141.973 242.979 142.076 242.918Z"
+                  fill="#524296" />
+                <path
+                  d="M141.943 242.117L149.708 237.774L141.883 234.539C141.675 234.398 141.453 234.446 141.276 234.575L133.78 238.737L141.943 242.117Z"
+                  fill="#6048AA" />
+                <path
+                  d="M152.44 236.927L160.006 232.44C160.289 232.272 160.261 231.832 159.96 231.709L152.099 228.486C151.996 228.443 151.881 228.451 151.783 228.504L144.145 232.744C143.857 232.903 143.875 233.346 144.175 233.478L152.108 236.948C152.215 236.995 152.338 236.988 152.44 236.927Z"
+                  fill="#524296" />
+                <path
+                  d="M152.308 236.126L160.073 231.783L152.249 228.548C152.041 228.408 151.819 228.455 151.642 228.584L144.145 232.746L152.308 236.126Z"
+                  fill="#6048AA" />
+                <path
+                  d="M163.421 230.926L170.986 226.439C171.269 226.271 171.24 225.831 170.94 225.708L163.08 222.485C162.976 222.442 162.862 222.45 162.763 222.503L155.126 226.743C154.838 226.903 154.855 227.345 155.155 227.477L163.087 230.947C163.195 230.994 163.319 230.987 163.421 230.926Z"
+                  fill="#524296" />
+                <path
+                  d="M163.289 230.125L171.054 225.782L163.23 222.547C163.022 222.406 162.8 222.453 162.623 222.583L155.126 226.744L163.289 230.125Z"
+                  fill="#6048AA" />
+                <path
+                  d="M174.556 224.801L182.122 220.314C182.405 220.146 182.377 219.706 182.075 219.583L174.214 216.359C174.111 216.317 173.996 216.325 173.898 216.379L166.26 220.619C165.972 220.779 165.99 221.221 166.29 221.353L174.221 224.823C174.331 224.869 174.454 224.862 174.556 224.801Z"
+                  fill="#524296" />
+                <path
+                  d="M174.424 224L182.189 219.657L174.365 216.422C174.157 216.281 173.935 216.328 173.758 216.458L166.261 220.619L174.424 224Z"
+                  fill="#6048AA" />
+                <path
+                  d="M185.905 218.842L193.47 214.355C193.753 214.187 193.726 213.747 193.423 213.624L185.562 210.401C185.459 210.358 185.344 210.366 185.246 210.419L177.608 214.659C177.32 214.819 177.338 215.261 177.638 215.392L185.57 218.862C185.679 218.911 185.801 218.903 185.905 218.842Z"
+                  fill="#524296" />
+                <path
+                  d="M185.773 218.041L193.537 213.698L185.713 210.463C185.504 210.321 185.283 210.369 185.106 210.499L177.609 214.66L185.773 218.041Z"
+                  fill="#6048AA" />
+                <path
+                  d="M197.013 212.558L204.579 208.071C204.862 207.903 204.834 207.464 204.533 207.34L196.672 204.117C196.569 204.074 196.454 204.082 196.356 204.137L188.718 208.377C188.43 208.536 188.448 208.978 188.748 209.109L196.681 212.579C196.788 212.626 196.911 212.619 197.013 212.558Z"
+                  fill="#524296" />
+                <path
+                  d="M196.881 211.756L204.646 207.413L196.822 204.178C196.612 204.037 196.392 204.085 196.215 204.214L188.718 208.376L196.881 211.756Z"
+                  fill="#6048AA" />
+                <path
+                  d="M207.837 206.831L215.403 202.344C215.685 202.176 215.658 201.737 215.357 201.613L207.496 198.39C207.393 198.347 207.278 198.355 207.18 198.409L199.542 202.648C199.254 202.808 199.272 203.25 199.572 203.382L207.503 206.852C207.612 206.899 207.735 206.892 207.837 206.831Z"
+                  fill="#524296" />
+                <path
+                  d="M207.706 206.03L215.471 201.686L207.646 198.452C207.437 198.311 207.216 198.358 207.039 198.488L199.542 202.649L207.706 206.03Z"
+                  fill="#6048AA" />
+                <path
+                  d="M218.203 200.84L225.768 196.353C226.051 196.185 226.022 195.745 225.721 195.622L217.862 192.399C217.758 192.356 217.644 192.364 217.545 192.418L209.908 196.658C209.62 196.818 209.637 197.26 209.937 197.391L217.87 200.861C217.977 200.908 218.101 200.901 218.203 200.84Z"
+                  fill="#524296" />
+                <path
+                  d="M218.071 200.037L225.836 195.694L218.011 192.459C217.802 192.318 217.582 192.366 217.405 192.495L209.908 196.656L218.071 200.037Z"
+                  fill="#6048AA" />
+                <path
+                  d="M229.075 194.714L236.641 190.228C236.923 190.06 236.895 189.62 236.593 189.497L228.733 186.273C228.629 186.231 228.515 186.238 228.416 186.292L220.779 190.532C220.491 190.691 220.508 191.133 220.809 191.265L228.741 194.735C228.85 194.784 228.972 194.775 229.075 194.714Z"
+                  fill="#524296" />
+                <path
+                  d="M228.943 193.912L236.708 189.569L228.883 186.334C228.674 186.194 228.453 186.241 228.277 186.371L220.78 190.532L228.943 193.912Z"
+                  fill="#6048AA" />
+                <path
+                  d="M239.64 188.683L247.206 184.197C247.488 184.029 247.46 183.589 247.158 183.466L239.299 180.242C239.195 180.2 239.081 180.207 238.982 180.261L231.345 184.501C231.057 184.66 231.074 185.103 231.375 185.235L239.308 188.705C239.415 188.752 239.537 188.744 239.64 188.683Z"
+                  fill="#524296" />
+                <path
+                  d="M239.508 187.882L247.273 183.539L239.448 180.304C239.24 180.163 239.019 180.211 238.842 180.34L231.345 184.502L239.508 187.882Z"
+                  fill="#6048AA" />
+                <path
+                  d="M120.045 265.264L127.61 260.778C127.893 260.609 127.866 260.171 127.564 260.046L119.704 256.823C119.6 256.781 119.486 256.788 119.387 256.842L111.75 261.081C111.462 261.241 111.479 261.683 111.779 261.815L119.711 265.285C119.819 265.333 119.943 265.325 120.045 265.264Z"
+                  fill="#524296" />
+                <path
+                  d="M119.913 264.463L127.678 260.119L119.853 256.885C119.644 256.743 119.423 256.791 119.246 256.921L111.75 261.082L119.913 264.463Z"
+                  fill="#6048AA" />
+                <path
+                  d="M131.152 259.29L138.717 254.804C139 254.636 138.971 254.196 138.67 254.073L130.811 250.849C130.707 250.807 130.593 250.814 130.494 250.869L122.857 255.109C122.569 255.268 122.586 255.711 122.886 255.843L130.818 259.313C130.926 259.36 131.05 259.351 131.152 259.29Z"
+                  fill="#524296" />
+                <path
+                  d="M131.02 258.489L138.784 254.146L130.96 250.911C130.75 250.77 130.53 250.818 130.353 250.947L122.856 255.109L131.02 258.489Z"
+                  fill="#6048AA" />
+                <path
+                  d="M141.824 253.003L149.389 248.517C149.672 248.349 149.645 247.909 149.342 247.786L141.482 244.562C141.379 244.52 141.264 244.527 141.166 244.582L133.528 248.822C133.241 248.981 133.258 249.423 133.558 249.556L141.49 253.026C141.598 253.072 141.722 253.064 141.824 253.003Z"
+                  fill="#524296" />
+                <path
+                  d="M141.691 252.202L149.456 247.859L141.632 244.624C141.424 244.483 141.202 244.531 141.025 244.66L133.528 248.821L141.691 252.202Z"
+                  fill="#6048AA" />
+                <path
+                  d="M152.674 247.071L160.24 242.584C160.523 242.416 160.494 241.976 160.192 241.853L152.332 238.629C152.228 238.587 152.114 238.595 152.015 238.649L144.378 242.889C144.09 243.049 144.107 243.491 144.408 243.622L152.341 247.092C152.449 247.139 152.571 247.13 152.674 247.071Z"
+                  fill="#524296" />
+                <path
+                  d="M152.542 246.269L160.307 241.926L152.482 238.691C152.274 238.549 152.053 238.598 151.876 238.728L144.379 242.889L152.542 246.269Z"
+                  fill="#6048AA" />
+                <path
+                  d="M163.778 241.291L171.344 236.805C171.627 236.637 171.599 236.197 171.298 236.074L163.437 232.85C163.334 232.808 163.219 232.815 163.121 232.869L155.483 237.109C155.195 237.268 155.213 237.71 155.513 237.842L163.445 241.313C163.553 241.36 163.676 241.352 163.778 241.291Z"
+                  fill="#524296" />
+                <path
+                  d="M163.647 240.49L171.411 236.147L163.587 232.912C163.378 232.771 163.157 232.819 162.98 232.948L155.483 237.11L163.647 240.49Z"
+                  fill="#6048AA" />
+                <path
+                  d="M174.494 235.213L182.06 230.727C182.342 230.559 182.314 230.12 182.012 229.996L174.153 226.772C174.049 226.73 173.935 226.737 173.836 226.791L166.199 231.031C165.911 231.19 165.929 231.632 166.229 231.764L174.162 235.234C174.269 235.282 174.392 235.273 174.494 235.213Z"
+                  fill="#524296" />
+                <path
+                  d="M174.362 234.411L182.127 230.068L174.303 226.833C174.093 226.691 173.873 226.74 173.696 226.869L166.199 231.031L174.362 234.411Z"
+                  fill="#6048AA" />
+                <path
+                  d="M185.599 229.229L193.165 224.742C193.448 224.574 193.419 224.134 193.117 224.011L185.258 220.788C185.155 220.745 185.04 220.753 184.942 220.808L177.304 225.047C177.016 225.207 177.034 225.649 177.334 225.78L185.266 229.25C185.374 229.297 185.497 229.29 185.599 229.229Z"
+                  fill="#524296" />
+                <path
+                  d="M185.468 228.426L193.232 224.083L185.408 220.848C185.2 220.707 184.978 220.755 184.801 220.884L177.304 225.046L185.468 228.426Z"
+                  fill="#6048AA" />
+                <path
+                  d="M196.914 223.231L204.479 218.744C204.762 218.576 204.735 218.137 204.432 218.013L196.573 214.79C196.469 214.747 196.355 214.755 196.256 214.808L188.618 219.048C188.331 219.208 188.348 219.65 188.648 219.782L196.581 223.252C196.688 223.299 196.812 223.291 196.914 223.231Z"
+                  fill="#524296" />
+                <path
+                  d="M196.782 222.428L204.547 218.085L196.722 214.85C196.513 214.709 196.292 214.757 196.116 214.886L188.619 219.048L196.782 222.428Z"
+                  fill="#6048AA" />
+                <path
+                  d="M207.776 217.113L215.342 212.627C215.625 212.458 215.597 212.019 215.294 211.895L207.435 208.672C207.332 208.63 207.217 208.637 207.119 208.692L199.481 212.932C199.193 213.091 199.211 213.533 199.511 213.664L207.443 217.134C207.551 217.182 207.674 217.174 207.776 217.113Z"
+                  fill="#524296" />
+                <path
+                  d="M207.644 216.312L215.409 211.969L207.584 208.734C207.375 208.592 207.155 208.64 206.978 208.77L199.481 212.931L207.644 216.312Z"
+                  fill="#6048AA" />
+                <path
+                  d="M218.107 211.134L225.672 206.648C225.955 206.48 225.926 206.04 225.625 205.917L217.765 202.693C217.662 202.651 217.547 202.658 217.449 202.712L209.811 206.952C209.524 207.111 209.541 207.553 209.841 207.684L217.774 211.154C217.881 211.203 218.005 211.195 218.107 211.134Z"
+                  fill="#524296" />
+                <path
+                  d="M217.975 210.332L225.74 205.989L217.915 202.754C217.707 202.613 217.485 202.66 217.308 202.79L209.812 206.951L217.975 210.332Z"
+                  fill="#6048AA" />
+                <path
+                  d="M228.636 205.195L236.201 200.709C236.484 200.54 236.455 200.101 236.154 199.977L228.294 196.754C228.191 196.712 228.077 196.719 227.978 196.774L220.34 201.014C220.053 201.173 220.07 201.615 220.37 201.746L228.303 205.216C228.41 205.264 228.534 205.256 228.636 205.195Z"
+                  fill="#524296" />
+                <path
+                  d="M228.503 204.394L236.268 200.051L228.444 196.816C228.236 196.675 228.014 196.722 227.837 196.852L220.34 201.013L228.503 204.394Z"
+                  fill="#6048AA" />
+                <path
+                  d="M239.58 198.729L247.146 194.242C247.428 194.074 247.4 193.635 247.098 193.511L239.239 190.288C239.135 190.245 239.021 190.253 238.922 190.306L231.285 194.546C230.997 194.706 231.014 195.148 231.315 195.28L239.248 198.75C239.355 198.797 239.478 198.789 239.58 198.729Z"
+                  fill="#524296" />
+                <path
+                  d="M239.448 197.926L247.213 193.583L239.389 190.348C239.181 190.207 238.959 190.255 238.782 190.384L231.285 194.546L239.448 197.926Z"
+                  fill="#6048AA" />
+                <path
+                  d="M249.799 193.284L257.364 188.797C257.647 188.629 257.62 188.19 257.318 188.066L249.458 184.843C249.354 184.801 249.24 184.808 249.141 184.863L241.503 189.103C241.216 189.262 241.233 189.704 241.533 189.836L249.465 193.306C249.573 193.352 249.695 193.345 249.799 193.284Z"
+                  fill="#524296" />
+                <path
+                  d="M249.667 192.481L257.432 188.138L249.607 184.903C249.398 184.762 249.177 184.809 249 184.939L241.503 189.1L249.667 192.481Z"
+                  fill="#6048AA" />
+                <path
+                  d="M227.774 185.363L236.51 179.836C237.077 179.502 237.027 178.803 236.422 178.548L228.779 175.241C228.587 175.159 228.37 175.172 228.19 175.278L219.734 180.26C219.265 180.604 219.283 181.697 219.823 181.886L227.142 185.401C227.347 185.499 227.582 185.486 227.774 185.363Z"
+                  fill="#524296" />
+                <path
+                  d="M228.357 184.121L236.322 179.252C236.602 179.08 236.576 178.644 236.277 178.513L228.803 175.254C228.583 175.097 228.352 175.15 228.166 175.295L220.317 179.919C219.858 180.19 219.885 180.895 220.36 181.123L226.79 184.204C227.294 184.445 227.877 184.413 228.357 184.121Z"
+                  fill="#6048AA" />
+                <path
+                  d="M96.7206 268.932L105.457 263.404C106.024 263.07 105.974 262.371 105.368 262.116L97.7258 258.81C97.534 258.728 97.3172 258.742 97.1366 258.848L88.6806 263.83C88.2123 264.174 88.2297 265.266 88.7716 265.455L96.0904 268.97C96.2922 269.067 96.5288 269.054 96.7206 268.932Z"
+                  fill="#524296" />
+                <path
+                  d="M97.3038 267.686L105.269 262.817C105.549 262.645 105.523 262.209 105.224 262.079L97.7497 258.819C97.5305 258.662 97.2989 258.716 97.112 258.86L89.2638 263.485C88.8055 263.755 88.8316 264.46 89.3074 264.688L95.7369 267.77C96.2401 268.011 96.8243 267.98 97.3038 267.686Z"
+                  fill="#6048AA" />
+                <path
+                  d="M108.088 273.095L116.824 267.568C117.391 267.234 117.341 266.535 116.736 266.28L109.093 262.973C108.901 262.891 108.684 262.904 108.504 263.01L100.048 267.992C99.5795 268.336 99.5969 269.428 100.139 269.618L107.458 273.133C107.659 273.231 107.895 273.216 108.088 273.095Z"
+                  fill="#524296" />
+                <path
+                  d="M108.671 271.851L116.636 266.982C116.916 266.81 116.89 266.374 116.592 266.243L109.118 262.984C108.898 262.827 108.667 262.88 108.48 263.025L100.631 267.649C100.172 267.92 100.198 268.625 100.674 268.854L107.104 271.935C107.607 272.176 108.19 272.145 108.671 271.851Z"
+                  fill="#6048AA" />
+                <path
+                  d="M36.7042 261.309L39.4469 263.369L39.9937 100.424L36.5087 98.2402C35.7289 97.7519 34.7163 98.3124 34.7163 99.2329V257.717C34.7163 259.176 35.4674 260.533 36.7042 261.309Z"
+                  fill="#B4A0F5" />
+              </svg>
+            </div>
+            <!-- container item -->
+            <div class="flex flex-col gap-2">
+              <h3 class="text-2xl text-neutral-200">Constante Evolução</h3>
+              <p class="text-neutral-400">
+                Tenho prazer em aprender e me adaptar a diferentes cenários, sempre buscando a melhoria contínua e a
+                entrega mais eficiente possível em cada etapa do desenvolvimento.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- effects blur with ellipses -->
+        <div
+          class="size-80 bg-neutral-400 absolute rounded-full bg-gradient-to-r from-rose-300 to-orange-300 blur-[150px] top-[-15%] left-[-15%] z-1">
+        </div>
+        <div
+          class="size-80 bg-neutral-400 absolute rounded-full bg-gradient-to-r from-rose-300 to-orange-300 blur-[150px] top-[60%] left-[75%] z-1">
+        </div>
+      </div>
+    </section>
+
+    <!-- blog section -->
+    <section class="w-full min-h-screen flex items-center justify-center">
+      <div class="flex justify-center items-center gap-10">
+        <!-- left side -->
+        <div>
+          <div
+            class="bg-gradient-to-r from-rose-200/10 to-orange-200/10 w-max px-4 py-1 rounded-full mb-2 flex items-center justify-center">
+            <p class="text-sm text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text font-medium">
+              Blog</p>
+          </div>
+          <h2 class="text-5xl mb-6">Aprendendo como um <br>
+            <span
+              class="font-semibold text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text text-5xl w-max">Desenvolvedor</span>
+          </h2>
+          <p class="w-xl mb-4">
+            Entre o universo do backend e as reflexões do dia a dia como desenvolvedor, compartilho aprendizados,
+            criações e descobertas que moldam minha jornada na tecnologia. Este é o espaço que criei para dividir ideias
+            e explorar o equilíbrio entre o lado técnico e o lado humano do desenvolvimento de software.
+          </p>
+          <p class="w-xl  mb-20">
+            Também uso este espaço para apresentar, na prática, projetos que estou desenvolvendo ou pretendo iniciar -
+            um ambiente ideal para expor ideias, garantir qualidade de aprendizado e aprimorar minha experiência.
+          </p>
+          <button
+            class="flex justify-center items-center w-max h-12 bg-gradient-to-r from-rose-200 to-orange-200 py-2 px-4 gap-3 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+            Ir para o blog
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" class="size-6 stroke-2">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <!-- right side -->
+        <div class="h-full relative flex justify-start items-center">
+          <img src="./public/Images/photos/blog-post.png" alt="foto de um projeto em código"
+            class="h-[320px] w-[532px] rounded-2xl border-2 border-neutral-700">
+          <img src="./public/Images/photos/blog.png" alt="foto de um projeto em código"
+            class="h-[320px] w-[532px] rounded-2xl border-2 border-neutral-700 absolute top-25 left-25">
+        </div>
+      </div>
     </section>
 
     <!-- contact us section -->
-    <section>
-      <div class="mark">
-        <p>Entre em contato comigo.</p>
+    <section class="w-full min-h-screen flex flex-col justify-center items-center gap-4 mb-48">
+      <div
+        class="bg-gradient-to-r from-rose-200/10 to-orange-200/10 w-max px-4 py-1 rounded-full mb-2 flex items-center justify-center">
+        <p class="text-sm text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text font-medium">
+          Contato</p>
       </div>
-      <h2>Pronto para desenvolver sua próxima grande ideia?</h2>
-      <div>
-        <!-- Discord -->
-        <div class="card">
-          <h3>Discord</h3>
-          <div>
-            <p>arandas_</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-icon lucide-copy">
-              <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-            </svg>
-          </div>
-          <button>Enviar Mensagem</button>
-        </div>
-
-        <!-- LinkedIn -->
-        <div class="card">
-          <h3>LinkedIn</h3>
-          <div>
-            <p>in/arandasnyan</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-icon lucide-copy">
-              <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-            </svg>
-          </div>
-          <button>Enviar Mensagem</button>
-        </div>
+      <div class="flex flex-col justify-center items-center">
+        <h2 class="text-5xl">Entre em</h2>
+        <h2
+          class="font-semibold text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text text-5xl/[auto] w-max">
+          contato comigo!</h2>
+      </div>
+      <p class="w-2xl text-center text-lg mb-12">Gostou do meu trabalho? Se acredita que posso agregar valor à área de
+        tecnologia da sua empresa, entre em
+        contato — Estes são os dois canais mais eficientes que utilizo para comunicação.</p>
+      <div class="flex gap-10">
+        <button
+          class="flex justify-center items-center w-max h-12 bg-gradient-to-r from-rose-200 to-orange-200 py-2 px-4 gap-3 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+          Enviar mensagem
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+            stroke-linejoin="round" class="size-6 stroke-2">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </button>
+        <button
+          class="flex justify-center items-center w-max h-12 bg-neutral-800 py-2 px-4 gap-3 border border-neutral-700 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+          <span class="text-transparent bg-gradient-to-r from-rose-200 to-orange-200 bg-clip-text">Mandar um
+            email</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+            stroke-linejoin="round" class="size-6 stroke-2 stroke-orange-200">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-left">
-        <p class="footer-label">Me contate</p>
-        <h2>Desenvolvedor de Software<br>eficientes e escaláveis.</h2>
-
-        <button class="download-btn">
-          Baixar Currículo
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-download-icon lucide-download">
-            <path d="M12 15V3" />
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <path d="m7 10 5 5 5-5" />
-          </svg>
-        </button>
-
-        <div class="contact-email">
-          <p>CONTATO POR EMAIL</p>
-          <div class="email-box">
-            <p>arandas.professional@gmail.com</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-icon lucide-copy">
-              <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+  <footer class="w-full px-8 py-8 flex justify-center items-center">
+    <div class="max-w-6xl w-full rounded-4xl flex flex-col gap-4 p-10 border-2 border-neutral-800 bg-neutral-800/25">
+      <!-- top div -->
+      <div class="w-full flex gap-20">
+        <!-- left side div -->
+        <div class="w-1/2 flex flex-col gap-4">
+          <p class="flex gap-4 text-2xl text-neutral-300">
+            <svg viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" class="w-auto h-8">
+              <mask id="mask-gradient" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="0" width="41"
+                height="32">
+                <path
+                  d="M0.226888 6.12889C0.340393 9.496 0.718743 15.3979 1.02142 19.2568C1.74029 27.4287 2.23214 28.942 4.88059 30.6066C9.15594 33.2927 14.869 32.0821 21.528 27.0882C24.3656 25.0074 24.6305 24.7047 23.9494 24.4021C22.1333 23.5697 24.1764 21.8294 26.7492 21.9808C28.5653 22.1321 29.3598 23.0779 28.4518 23.9859C27.8843 24.5534 28.1113 24.8561 30.7597 27.6178C32.6515 29.5473 33.9757 30.6066 34.5054 30.6066C37.1917 30.6066 40.1428 23.6832 39.7266 18.311C39.4996 15.3979 38.4781 12.5983 35.2621 6.28022C32.6136 0.983648 32.5001 0.832317 31.4408 1.55114C30.9489 1.89163 29.6625 2.95095 28.5275 3.97243L26.4844 5.82623L21.1875 5.6749C15.9284 5.5614 15.8906 5.5614 12.8259 4.08593C9.68563 2.53479 6.65884 1.51331 2.42132 0.56749L-0.00012207 0L0.226888 6.12889Z"
+                  fill="black" />
+              </mask>
+              <g mask="url(#mask-gradient)">
+                <rect y="-0.0302734" width="39.7781" height="32.0622" fill="url(#pattern-gradient)" />
+              </g>
+              <defs>
+                <pattern id="pattern-gradient" patternContentUnits="objectBoundingBox" width="1" height="1">
+                  <use xlink:href="#headcat-background" transform="matrix(0.00201507 0 0 0.0025 -0.217363 0)" />
+                </pattern>
+                <image id="headcat-background" width="712" height="400" preserveAspectRatio="none"
+                  xlink:href="/public/images/logo/cat-logo-background-gradient.png">
+              </defs>
+            </svg>
+            Arandas Dev
+          </p>
+          <h3 class="text-4xl font-medium mb-4">Desenvolvedor de Software<br>eficiente e escalável</h3>
+          <button
+            class="flex justify-center items-center w-max h-12 mb-4 bg-gradient-to-r from-rose-200 to-orange-200 py-2 px-4 gap-3 rounded-2xl text-neutral-900 stroke-neutral-900 font-medium hover:cursor-pointer hover:from-rose-200/90 hover:to-orange-200/90 transition hover:scale-105 hover:outline-2 outline-offset-2 outline-orange-200">
+            Download CV
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" class="size-6 stroke-2">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+          <!-- container icon -->
+          <div>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 97.6 96" xml:space="preserve"
+              class="fill-neutral-100 size-8">
+              <path class="st0" d="M48.9,0C21.8,0,0,22,0,49.2C0,71,14,89.4,33.4,95.9c2.4,0.5,3.3-1.1,3.3-2.4c0-1.1-0.1-5.1-0.1-9.1
+	c-13.6,2.9-16.4-5.9-16.4-5.9c-2.2-5.7-5.4-7.2-5.4-7.2c-4.4-3,0.3-3,0.3-3c4.9,0.3,7.5,5.1,7.5,5.1c4.4,7.5,11.4,5.4,14.2,4.1
+	c0.4-3.2,1.7-5.4,3.1-6.6c-10.8-1.1-22.2-5.4-22.2-24.3c0-5.4,1.9-9.8,5-13.2c-0.5-1.2-2.2-6.3,0.5-13c0,0,4.1-1.3,13.4,5.1
+	c3.9-1.1,8.1-1.6,12.2-1.6s8.3,0.6,12.2,1.6c9.3-6.4,13.4-5.1,13.4-5.1c2.7,6.8,1,11.8,0.5,13c3.2,3.4,5,7.8,5,13.2
+	c0,18.9-11.4,23.1-22.3,24.3c1.8,1.5,3.3,4.5,3.3,9.1c0,6.6-0.1,11.9-0.1,13.5c0,1.3,0.9,2.9,3.3,2.4C83.6,89.4,97.6,71,97.6,49.2
+	C97.7,22,75.8,0,48.9,0z" />
             </svg>
           </div>
         </div>
-      </div>
 
-      <!-- Seção Direita -->
-      <div class="footer-right">
-        <div class="footer-column">
-          <p class="footer-label">Outras páginas</p>
-          <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#Sobre_Mim">Sobre Mim</a></li>
-            <li><a href="#Projetos">Projetos</a></li>
-            <li><a href="#Curriculo">Currículo</a></li>
-            <li><a href="#Blog">Blog?</a></li>
+        <!-- right side div -->
+        <div class="w-1/2 flex justify-evenly items-start">
+          <ul class="text-base text-neutral-300 flex flex-col gap-2">
+            <h3 class="text-lg text-neutral-200 font-semibold mb-4">Outras Páginas</h3>
+            <li><a href="#sobre" class="hover:text-neutral-100">Sobre mim</a></li>
+            <li><a href="#projetos" class="hover:text-neutral-100">Projetos</a></li>
+            <li><a href="#contato" class="hover:text-neutral-100">Contato</a></li>
+            <li><a href="#blog" class="hover:text-neutral-100">Blog</a></li>
+            <li><a href="#design-system" class="hover:text-neutral-100">Design System</a></li>
+          </ul>
+
+          <ul class="text-base text-neutral-300 flex flex-col gap-2">
+            <h3 class="text-lg text-neutral-200 font-semibold mb-4">Informações sociais</h3>
+            <li><a href="https://github.com/" target="_blank" class="hover:text-neutral-100">Github</a></li>
+            <li><a href="https://linkedin.com/" target="_blank" class="hover:text-neutral-100">LinkedIn</a></li>
+            <li><a href="https://instagram.com/" target="_blank" class="hover:text-neutral-100">Instagram</a></li>
+            <li><a href="https://x.com/" target="_blank" class="hover:text-neutral-100">X (antigo Twitter)</a>
+            </li>
           </ul>
         </div>
-
-        <div class="footer-column">
-          <p class="footer-label">Informações</p>
-          <ul>
-            <li><a href="#LinkedIn">LinkedIn</a></li>
-            <li><a href="#Github">GitHub</a></li>
-            <li><a href="#X">X (antigo Twitter)</a></li>
-          </ul>
-        </div>
       </div>
-    </div>
 
-    <div class="divider"></div>
-
-    <!-- Rodapé Inferior -->
-    <div class="footer-bottom">
-      <p>Copyright © 2025 ArandasNyan. Todos os direitos reservados.</p>
-      <div class="social-icons">
-        <a href="https://twitter.com/ArandasNyan" target="_blank">
-          <img src="./public/image/svg/X.svg" alt="Logo do X (antigo Twitter)">
-        </a>
-        <a href="https://github.com/ArandasNyan" target="_blank">
-          <img src="./public/image/svg/GitHub_Invertocat_Light.svg" alt="logo do github">
-        </a>
-        <a href="https://www.linkedin.com/in/arandasnyan" target="_blank">
-          <img src="./public/image/InBug-White.png" alt="logo do linkedin">
-        </a>
+      <!-- bottom div -->
+      <div class="w-full flex items-end">
+        <div class="w-full flex gap-8">
+          <p class="text-neutral-400">Create by <span class="text-neutral-300 font-semibold">Arandas Dev</span></p>
+          <p class="text-neutral-400">Copyright &copy; 2025. Todos os direitos reservados.</p>
+        </div>
+        <button
+          class="size-16 bg-neutral-800 border border-neutral-700 rounded-2xl flex justify-center items-center hover:cursor-pointer"
+          id="scroll-to" data-target="nav">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+            stroke-linejoin="round" class="size-6 stroke-2 stroke-neutral-100">
+            <path d="m5 12 7-7 7 7" />
+            <path d="M12 19V5" />
+          </svg>
+        </button>
       </div>
     </div>
   </footer>
+  <script type="module" src="./src/index.js"></script>
 </body>
 
 </html>
